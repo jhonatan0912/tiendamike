@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #FFFAF4;
+	font-family: 'Varela Round', sans-serif;
+}
+
+.container-logo-title{
+	display: flex;
+	padding: 15px;
+}
+
+.img-logo{
+	width: 162px;
+}
+
+.options-administrator{
+	background-color: #C92D39;
+	border: 1px solid #000;
+	box-shadow:2px 2px 10px #000 ;
+	border-radius: 15px;
+	width: 250px;
+	height: 300px;
+	text-align: center;
+	padding: 10px 5px;
+}
+
+.statistics{
+	/* background-color: red; */
+	width:85%;
+	margin: 0 auto;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.statistics__card{
+box-shadow: 0 0 10px;
+	/* background-color: green; */
+	background-color: #fff;
+	margin: 1em 2.5em;
+	border-radius: .7em;
+	min-width: 190px;
+	max-height: 100px;
+	padding: .5em 1.5em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.image__card{
+	width: 100px;
+	height: 100px;
+	/* background-color: blue; */
+}
+
+.statistics__img{
+	width: 100px;
+	height: 100px;
+}
+
+.number-data{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+
+
+
+
+.salir{
+    width: 200px;
+    background: #C92D39;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    line-height: 30px;
+    height: 30px;
+    margin: 5px auto;
+		border: 1px solid #000;
+}
+
+.salir:hover{
+	background-color: #f7b43f;
+}
+
+.redireccion-salir:hover{
+		color: rgb(36, 36, 36);
+}
+
+.redireccion-salir{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+		font-size: 15px;
+}
+
+.salirsvg{
+    width: 20px;
+    filter: invert(100%);
+    vertical-align: middle;
+}
+
+.container-title{
+	background-color: #000;
+	height: 80px;
+	width: 460px;
+	text-align: center;
+	border-radius: 20px;
+	line-height: 80px;
+	margin: auto;
+}
+
+.container-page-mid{
+	height: calc(100vh - 220px);
+	margin: 10px 30px;
+	display: flex;
+	/* background-color: #C27B00; */
+}
+
+.form-register-plato{
+	background-color: #CB0620;
+	width: 460px;
+	border-radius: 20px;
+	text-align: center;
+	margin: 20px 28% 6%;
+	box-shadow: 2px 2px 10px #000;
+}
+
+.upload-image-container{
+	height: 210px;
+	padding: 15px 100px;
+}
+
+ input[type="file"]{
+	width: 280px;
+	height: 200px;
+	position: absolute;
+	opacity: 1;
+	margin: 0 -100px;
+	background-image: url(/assets/imagenes/subir.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: rgba(0, 0, 0, 0)
+}
+
+::file-selector-button {
+  display: none;
+}
+
+.image-uploads{
+	width: 210px;
+	height: 210px;
+} 
+
+input[type="submit"]{
+	width: 150px;
+	height: 45px;
+	border-radius: 50px;
+	color: #fff;
+	background-color: #000;
+	border: 1px solid #C27B00;
+}
+
+input[type="submit"]:hover{
+	background-color: #f7b43f;
+	color: #000;
+	font-weight: 700;
+	border: 1px solid #000;
+}
+
+::placeholder{
+	color: #fff;
+}
+
+select::-webkit-scrollbar{
+	width: 10px;
+	background-color: #C92D39;
+	border-radius: 2px;
+}
+
+select::-webkit-scrollbar-thumb{
+	background-color: #FCC438;
+	border-radius: 2	px;
+}
+
+select::-webkit-scrollbar-thumb:hover{
+	background: rgba(203,6,32);
+	border: 1px solid #C27B00;
+}
+
+select{
+	width: 400px;
+}
+
+
+/* CLASES DE APOYO */
+
+.fontColorWhite{
+	color: #ffffff;
+}
+
+.shadowText{
+ text-shadow: -1px 1px 0 #000,
+              1px 1px 0 #000,
+              1px -1px 0 #000,
+              -1px -1px 0 #000;
+}
+
+a{
+	text-decoration: none;
+}
+
+.marginOptions{
+	margin: 15px 0;
+}
+
+.borderMustard{
+	border: 1px solid #C27B00;
+}
+
+.sizeInput{
+	width: 250px;
+	height: 45px;
+	border-radius: 10px;
+	background-color: #CB0620;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+}
+
+.marginInputs{
+	margin: 10px 0;
+}
+
+.fontSize{
+	font-size: 19px;
+}
+
+button{
+	background-color: transparent;
+	border: none;
+}
+button:hover{
+	cursor: pointer;
+}
+/*! MODAL FORMULARIO REGISTRO DE PERSONAL */
+.formulario.oculto{
+	display: none;
+	visibility: hidden;
+}
+
+.formulario{
+	background-color:#C92D39;
+	position: fixed;
+	top: 21%;
+	left: 40%;
+	border-radius: .5em;
+	box-shadow: 0 0 10px #6e6e6e;
+	color: #fff;
+}
+
+.header-modal{
+	display: flex;
+	justify-content: space-between;
+	padding: .5em 1em;
+	/* background-color: pink; */
+	line-height: 3.5em;
+}
+
+.header-modal > p {
+	font-size: 2.3em;
+	color: #fff;
+}
+
+.btn-close-modal{
+	width: 55px;
+	height: 55px;
+	font-size: 3em;
+	font-weight: 900;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 0 0 .3em;
+	/* color: rgb(119, 119, 119); */
+}
+
+.btn-close-modal:hover{
+	color: #6e6e6e;
+}
+
+.inputs-form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1em 3em;
+	font-size: 1.2em;
+}
+
+input[type="number"],input[type="password"]{
+	height: 25px;
+	width: 60%;
+	border-radius: .5em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*? MODAL FILTRADO POR FECHA  */
+.formularioHistorySales.oculto{
+	display: none;
+	visibility: hidden;
+}
+
+.formularioHistorySales{
+	background-color:#C92D39;
+	position: fixed;
+	top: 21%;
+	left: 40%;
+	border-radius: .5em;
+	box-shadow: 0 0 10px #6e6e6e;
+	color: #fff;
+}
+
+.header-form-history{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: .4em 1em;
+}
+
+.header-form-history > p{
+	font-size: 2em;
+	color: #fff;
+}
+
+.formularioHistorySales > form {
+	/* background-color: blue; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2em;
+}
+
+input[type="date"]{
+	/* background-color: green; */
+	width: 200px;
+	height: 50px;
+	font-size: 1.3em;
+	border-radius:.5em ;
+	padding: .5em;
+	border: 2px solid #000;
+}
+
+.formularioHistorySales > form > input[type="date"],input[type="submit"]{
+	margin: 1em 0;
+}
+
+/*? FIN MODAL FILTRADO POR FECHA  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* input::-webkit-outer-spin-button
+input::-webkit-inner-spin-button{ */

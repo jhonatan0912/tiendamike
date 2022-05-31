@@ -1,0 +1,78 @@
+body{
+	background: #FFFAF4;
+	color: #FFFFFF;
+	font-family: 'Varela Round', sans-serif;
+}
+
+table{
+	background: #CB0620;
+	border-radius: 20px;
+	width: 400px;
+	box-shadow: 1em 1em 1em #DD5F5F;
+	padding: 5px;
+	margin-top: 5%;
+
+}
+
+
+h1{
+	background: #060606;
+	color: #FFFFFF;
+	width: 300px;
+	border-radius: 10px;
+	margin: 20px;
+	padding:10px;
+	/* font-family: @import url'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Lato:ital,wght@1,900&display=swap'; */
+	font-style: italic;
+	/* position: center; */
+}
+
+td{
+	background: #CB0620;
+	height: 30px;
+	width: 300px;
+	text-align: center;
+	border-radius: 20px;
+	padding-top: 4px;
+
+
+
+}
+
+form input[type="text"],form input[type="email"],form input[type="tel"]{
+	background:#FFFFFF;
+	border-radius: 10px;
+	height: 30px;
+	width: 200px;
+}
+
+form input[type="submit"]{
+	background:black;
+	color: white;
+	width: 150px;
+	height: 35px;
+	border-radius:10px;
+	margin: 15px;
+}
+
+form input[type="password"]{
+	background: #FFFFFF;
+	border-radius: 10px;
+	height: 30px;
+	width:200px ;
+}
+
+.login{
+	color: white;
+	text-decoration-line: none;
+}
+select{
+	color: #060606;
+	border-radius: 10px;
+	width: 200px;
+	font-size: 20px;
+	text-align: center;
+	height: 36px;
+	border-color:black;
+}
+

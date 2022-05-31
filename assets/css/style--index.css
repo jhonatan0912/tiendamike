@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+background: #FFFAF4;
+font-family: 'Akaya Telivigala', cursive;
+}
+
+.container{
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+
+.main-high{
+	display: flex;
+	justify-content:space-between;
+	height: 140px;
+	box-shadow: 0 0 4px;
+}
+
+.main-high__logo-title{
+	width: 620px;
+	display: flex;
+	align-items: center;
+	font-size: 2.9em;
+	justify-content: space-around;
+}
+
+.main-high__img{
+	width: 130px;
+}
+
+.main-high__options{
+	font-size: 1.6em;
+	width: 350px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.main-high__hyperlink{
+	text-decoration: none;
+	color: #000;
+}
+
+.main-high__hyperlink:hover{
+	border-bottom: 2px solid #000;
+}
+
+#loginr_p{	
+	width: 50px;
+	display: block;
+	margin:10px 10px 0 0 ;
+}
+
+#logof{
+width: 30px;
+height: 30px;
+
+}
+
+#logow{
+width: 30px;
+height: 30px;
+
+}
+
+.footerlow{
+	display: inline-block;
+}
+
+#map{
+	margin-top: 260px;
+}
+
+iframe{
+	border-radius: 10px;
+	width: 430px;
+	height: 280px;
+}
+
+#localimg{
+	width: 735px;
+	height: 515px;
+	border-radius: 10px;
+	filter: drop-shadow(2px 4px 6px black);
+}
+
+.mid{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 100px;
+}
+
+footer{
+	text-align: center;
+	background-color: #7E0001;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+font-family: 'Varela Round', sans-serif;
+}
+
+#footer--words{
+	color: #fff;
+	font-size: 22px;
+	padding: 5px 0;
+}
+
+#logof{
+	background-size: cover;
+}
+
+#logow{
+	height:32px;
+	width: 32px;
+}
+
+p{
+	margin:0;
+}
+
+.footerlow{
+	margin: 10px 0 0 0;
+}
+
+.manage{
+	float: right;
+	padding: 2em 10px 2em 0;
+}
+
+/* MEDIA QUERIES */
+
+/* 1328px */
+@media only screen and (max-width: 	83em){
+	/* body{
+		background-color: skyblue;
+	} */
+}
+/* 1024px */
+@media only screen and (max-width: 	64em){
+	/* body{
+		background-color: purple;
+	} */
+	#titulo-main{
+		text-align: center;
+	}
+	.mid{
+		width: 100%;
+	}
+	#localimg{
+		width: 100%;
+	}
+	iframe{
+		width: 95%;
+	}
+}
+/* 960px */
+@media only screen and (max-width: 	60em){
+	/* body{
+		background-color: yellow;
+	} */
+	#titulo-main{
+		text-align: center;
+	}
+	.mid{
+		width: 100%;
+		display: flex;
+	}
+	#localimg{
+		width: 100%;
+	}
+	iframe{
+		width: 100%;
+	}
+}
+/* 768px */
+@media only screen and (max-width: 	47.5em){
+	body{
+		font-size: 50%;
+	}
+	.logoid{
+		width: 130px;
+		height: 130px;
+	}
+	#globo1{
+		width: 80px;
+		height: 150px;
+	}
+	#globo2{
+		width: 80px;
+		height: 150px;
+	}
+	#titulo-main{
+		font-size: 1em;
+		text-align: center;
+	}
+	.opciones--nav{
+		border-radius: 8px;
+		/* width: 100%; */
+		/* float: none; */
+		display: flex;
+		justify-content: space-around;
+		line-height: 20px;
+		height: auto;
+		text-align: center;
+	}
+	.opciones--nav > a{
+		display:block;
+	}
+	.options{
+		border: none;
+	}
+	.mid{
+		margin: 2em 0;
+		display: flex;
+		flex-direction: column;
+	}
+	.options:hover{
+	border-bottom: none;
+	}
+	iframe{
+		align-items: stretch;
+		width: 100%;
+	}
+	footer{
+		position: relative;
+		bottom: 0;
+		left: 0;
+	}
+
+}
+
+/* 480px */
+@media only screen and (max-width: 	30em){
+	/* body{
+		background-color: red;
+	} */
+}
+/* 320px */
+@media only screen and (max-width: 	20em){
+	/* body{
+		background-color: blue;
+	} */
+}

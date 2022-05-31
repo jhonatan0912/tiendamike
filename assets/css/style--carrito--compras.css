@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #FFFAF4;
+    width: 100vw;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.logoImg{
+    width: 162px;
+    padding:15px 0 0 15px;
+}
+.nav--high{
+    display: flex;
+    width: 100vw;
+}
+.container-title-page{
+    width: calc(100vw - 192px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-shopping-cart{ 
+    line-height: 2em;
+    height:2em ;
+    border-radius: .2em;
+    background-color: black;
+    color: #FFFAF4;
+    padding: .1em .5em;
+} 
+.order-p{
+    display: inline-block;
+    margin: auto;
+    font-size: 2em;
+    font-weight: 500;
+    margin-left: 9em;
+}
+.products-container{
+    width: 70%;
+    max-width: 70%;
+    display: flex;
+    justify-content: space-between;
+    min-height: 30em;
+    margin: 2em auto;
+}
+.orders-container{
+    /* background-color:skyblue; */
+     box-shadow: 0 0 5px #6e6e6e;
+    width: 65%;
+    border-radius: .8em;
+}
+table{
+    width: 100%;
+}
+tr{
+    display: flex;
+    box-shadow: 0 0 5px #c7b7b7;
+    border-radius: .3em;
+    margin: 1em .5em;
+    justify-content: space-around;
+    align-items: center;
+    padding: .6em;
+}
+.imagen-producto{
+    border-radius: .2em;
+    max-height:100px ;
+    object-fit: contain;
+}
+
+
+
+
+
+input[type="number"]{
+    width: 3.7em;
+    height: 2em;
+    border-radius: .5em;
+    border: 1px solid #9f9992;
+    text-align: center;
+}
+.delete-img{
+    width: 40px;
+}
+.delete-img:hover{
+animation: mover 2s infinite;
+}
+@keyframes mover {
+    0% {
+    transform: rotate(-30deg);
+}
+
+25% {
+    transform: rotate(30deg);
+}
+50% {
+    transform: rotate(-30deg);
+}
+75% {
+    transform: rotate(30deg);
+}
+100% {
+    transform: rotate(-30deg);
+}
+}
+/*STYLES SUBTOTOTAL*/
+.resumen-pedido-container{
+    /* background-color: pink; */
+    box-shadow: 0 0 5px #918b8b;
+    width: 20%;
+    height: 12em;
+    border-radius: .8em;
+    text-align: center;
+    padding: 2em;
+}
+
+.subtotal-container{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3em
+}
+.btn-continuar{
+    background-color: #CB0620;
+    /* height: 2.5em; */
+    border-radius: .5em;
+    margin-top: 30%;
+}
+.btn-continuar > a {
+    color: #FFFAF4;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.8em;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+/*END STYLES SUBTOTOTAL*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 	30em){
+    body{
+        font-size: 13px;
+    }
+    .logoImg{
+        width: 11em;
+    }
+    .order-p{
+        margin-left: 1.3em;
+    }
+    .products-container{
+        /* background-color: blue; */
+        width: 90%;
+    }
+    tr{
+        /* background-color: green; */
+        display: flex;
+        flex-direction: column;
+    }
+    .title-shopping-cart{
+        font-size: 1.5em;
+    }
+}

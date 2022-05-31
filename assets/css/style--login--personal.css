@@ -1,0 +1,88 @@
+body{
+	margin:  0;
+	padding: 0;
+	font-family: 'Varela Round', sans-serif;
+	background: #FFFAF4;	
+}
+
+.box{
+
+	padding: 300px;
+	padding: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-505,-50%);
+	background: #CB0620;
+	text-align: center;
+	border-radius: 15px;
+
+
+}
+
+.box h1{
+
+	color:#000;
+	text-transform: uppercase;
+	font-weight: 700;
+
+	}
+
+
+.box input[type ="number"],.box input[type= "password"]{
+
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border:2px solid #C27B00;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: white;
+	background: rgba(128, 128, 128, 0.2);
+	border-radius: 24px;
+	transition: 0.25s;
+
+}
+
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.box input[type ="number"]::placeholder,.box input[type= "password"]::placeholder{
+	color: #fff;
+}
+
+
+.box input[type="text"]:focus, .box input[type="password"]:focus {
+		width: 280px;
+		border-color: #980001;
+}
+
+
+.box input[type ="submit"]{
+	border: 0;
+	background: #000;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border:2px solid #C27B00;
+	padding: 14px 10px;
+	
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+	}
+
+.box input[type="submit"]:hover{
+
+	background: #C27B00;
+
+}
+.logo{
+	padding: 15px 0 0 15px;
+}

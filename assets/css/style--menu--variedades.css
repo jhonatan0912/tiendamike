@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --background:#FFFAF4;
+}
+body{
+    background-color:var(--background) ;
+    overflow-x: hidden;
+    font-family: 'Akaya Telivigala', cursive;
+}
+/*nav styles*/
+.main-high{
+    display: flex;
+    width: 100vw;
+    /* background-color: green; */
+    box-shadow: 0 0 4px;
+}
+
+.main-high__logo{
+    padding: 0 20px;
+}
+
+.main-high__img{
+    width: 130px;
+}
+
+.main-high__title{
+    width: calc(100vw - 190px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.9em;
+}
+
+/*END nav styles*/
+
+.title-variedad{
+    width: 150px;
+    text-align: center;
+}
+.variety-container{
+    /* background-color: green; */
+    max-width: 81em;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 6em auto 0;
+    gap: 2.5em;
+}
+
+#postresimg{
+    width: 100%;
+    object-fit: cover;
+}
+
+.imagenfit{
+    object-fit: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 768px */
+@media only screen and (max-width: 	47.5em){
+    body{
+        font-size: 50%;
+        text-align: center;
+    }
+    .logo-img{
+        width: 130px;
+    }
+    .titulo-pagina{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo-p{
+        font-size: 5em;
+    }
+    .imagenfit{
+        width: 150px;
+        height: 150px;
+    }
+    .variedades--grid{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #postresimg{
+        width: 150px;
+    }
+}

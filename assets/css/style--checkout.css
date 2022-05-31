@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+    
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #FFFAF4;
+    width: 100vw;
+    font-family: 'Varela Round', sans-serif;
+}
+.container{
+    /* background-color: green; */
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.logoImg{
+    width: 162px;
+    padding:15px 0 0 15px;
+}
+.nav--high{
+    display: flex;
+    width: 100vw;
+    max-width: 100%; 
+}
+.container-title-page{
+    width: calc(100vw - 192px);
+    display: flex;
+  
+}
+.title-shopping-cart{
+    min-width: 14em;
+    line-height: 2em;
+    height:2em ;
+    border-radius: .2em;
+    text-align: center;
+    background-color: black;
+    color: #FFFAF4;
+    margin: auto;
+}
+.datos-cliente{
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+}
+.redirect-page-client{
+    color: #000;
+    font-weight:700;
+}
+.salir{
+    background-color: #C92D39;
+     border-radius: .3em;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.redireccion-salir{
+    color: #FFFAF4;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    padding: .5em;
+    font-size: .9em;
+    font-weight: 700;
+}
+.salirsvg{
+    width: 25px;
+    filter: invert();
+}
+/* container form agregar direcciones */
+.direccion-entrega{
+    max-width: 450px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.title-dir-ent{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: .5em;
+    text-transform: uppercase;
+    border-top: 1px solid  rgb(230, 235, 241);
+     border-bottom: 1px solid  rgb(230, 235, 241);
+}
+/* end container form direcciones */
+.order-p{
+    display: inline-block;
+    margin: auto;
+    font-size: 2em;
+    font-weight: 500;
+    margin-left: 9em;
+}
+.products-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    min-height: 30em;
+    margin: 2em auto;
+}
+.orders-container{
+    /* background-color:skyblue; */
+     box-shadow: 0 0 5px #6e6e6e;
+    width: 65%;
+    border-radius: .8em;
+}
+table{
+    width: 100%;
+}
+tr{
+    display: flex;
+    box-shadow: 0 0 5px #c7b7b7;
+    border-radius: .3em;
+    margin: 1em .5em;
+    justify-content: space-around;
+    align-items: center;
+    padding: .6em;
+}
+.imagen-producto{
+    border-radius: .2em;
+    max-height:100px ;
+    object-fit: contain;
+}
+.resumen-pedido-container{
+    box-shadow: 0 0 5px #918b8b;
+    width: 30%;
+    border-radius: .8em;
+    text-align: center;
+}
+.container-direcciones{
+    padding: .1em;
+}
+.container-direcciones > div {
+    /* background-color: blue; */
+    margin: 0 0 .2em 0
+}
+.subtotal-list-direcciones{
+    /* border: 1px solid rgb(112, 112, 112); */
+    /* padding: .1em; */
+    border-radius: .5em;
+}
+.datos-compra{
+    /* background-color: pink; */
+    /* border: 1px solid rgb(112, 112, 112); */
+    padding: 1em;
+    border-radius: .5em;
+}
+.resumen-pedido-container > form > div{
+    /* background-color: pink; */
+    padding: 1em;
+}
+.lista-st-drc{
+    padding: .8em 0;
+}
+.lista-direcciones{
+    /* background-color: green; */
+    text-align: justify;
+}
+.btn-continuar{
+    background-color: #c92d39;
+    border-radius: .5em;
+    padding: .5em;
+    color: #FFFAF4;
+    border: none;
+    padding: .5em .7em;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.btn-continuar:hover{
+    cursor: pointer;
+}
+/* btn agregar direccion */
+.agregar-direccion{
+    background-color: rgb(0, 98, 128);
+    border: none;
+    border-radius: .5em;
+    color: #fff;
+    padding: .5em .7em;
+    font-size: 1.1em;
+    font-weight: 600;
+
+}
+.agregar-direccion:hover{
+    cursor: pointer;
+}
+/* fin btn */
+.form-datos-envio > div > input[type="tel"],input[type="number"]{
+background-color: transparent;
+width: 35%;
+height: 2em;
+font-size: 1.1em;
+margin: auto;
+border: none;
+border-bottom: 1px solid #6e6e6e;
+outline: none;
+}
+
+.cantidad-prod{
+    width: 3.7em;
+    height: 2em;
+    border-radius: .5em;
+    border: 1px solid #9f9992;
+    text-align: center;
+   
+}
+.delete-img{
+    width: 40px;
+}
+.delete-img:hover{
+animation: mover 2s infinite;
+}
+@keyframes mover {
+    0% {
+    transform: rotate(-30deg);
+}
+
+25% {
+    transform: rotate(30deg);
+}
+50% {
+    transform: rotate(-30deg);
+}
+75% {
+    transform: rotate(30deg);
+}
+100% {
+    transform: rotate(-30deg);
+}
+}
+
+
+
+
+
+/* CLASES DE APOYO */
+
+a{
+    text-decoration: none;
+    display: block;
+}
+textarea{
+  resize: none;
+  height: 5em;
+  font-size: 1.1em;
+  border-radius: .5em;
+}
+/* modal js */
+.header-modal{
+    background-color: #000000;
+    display: flex;
+    font-size: 2em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.title-modal{
+    width: calc(100% - 40px);
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-close-modal{
+    width: 30px;
+    padding: 0 5px;
+    font-weight: 900;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    color: #fff;
+}
+.btn-close-modal:hover{
+    color: rgb(121, 121, 121);
+    cursor: pointer;
+}
+.formulario{
+    width: 30%;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    box-shadow: 0 0 5px #6e6e6e;
+    border-radius: 10px;
+    animation: scale .5s .1s backwards;
+}
+@keyframes scale {
+    0%{
+  transform: scale(0);
+}
+}
+.form-add-direction{
+    background-color: #fff; 
+    padding: 2em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.form-add-direction > div{
+    /* background-color: pink; */
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-add-direction > div > input[type="text"]{
+    /* background-color: green; */
+    width: 50%;
+    height: 2em;
+    outline: none;
+}
+::placeholder{
+    color: rgb(167, 167, 167);
+    text-align: center;
+}
+.oculto{
+    display: none;
+    visibility: hidden;
+}
+/* fin modal js */
+
+/* styles form datos para envio */
+.form-datos-envio > div{
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 .6em 0;
+}
+
+input[type="number"]:first-child{
+border: 1px solid rgb(189, 189, 189);
+}
+.numero-documento > input[type="number"]::-webkit-inner-spin-button{
+-webkit-appearance: none;
+}
+input[type="radio"]{
+    accent-color: #c92d39;
+    cursor: pointer;
+        width: 16px;
+    height: 16px;
+}
+/* fin styles form datos para envio */
+.list-tipo-comprobante{
+    text-align: justify;
+}
+.inp-direccion{
+    font-size: 1em;
+}
+
+
+
+
+
+
+
+
+/* 1024px */
+@media only screen and (max-width: 	64em){
+    tr{
+        /* background-color: green; */
+        display: flex;
+        flex-direction: column;
+    }
+    .resumen-pedido-container{
+        width: 30%;
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+
+}
+body{
+	font-family: 'Akaya Telivigala', cursive;
+	overflow-x: hidden;
+}
+/* NAVBAR */
+.main-high{
+    display: flex;
+    width: 100vw;
+    /* background-color: green; */
+    box-shadow: 0 0 4px;
+		height: 134px;
+}
+
+.main-high__logo{
+    padding: 0 20px;
+}
+
+.main-high__img{
+    width: 130px;
+}
+
+.main-high__title{
+    width: calc(100vw - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+}
+
+/* END NAVBAR */
+.cantidad-productos{
+	background-color:#C92D39;
+	border: 1px solid #686666;
+	box-shadow: 0 0 5px #888888;
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	text-align: center;
+	line-height: 20px;
+	color: #fff;
+}
+.carrito{
+	width: 70px;
+	margin: 15px 15px 0 0;
+}
+.container-asideList-platos{
+	display: flex;
+	margin:2em 20px;
+}
+.option--variedad{
+	width: 240px;
+	height: 30px;
+	background-color:#C92D39;
+	text-align: center;
+	margin: 3px 3px;
+	border-radius: 6px;
+}
+.title--variedades{
+	color: #fff;
+	font-size: 1.7em;
+	font-weight: 700;
+}
+.content--variedades{
+	color: #FCC438;
+	font-size: 1.5em;
+	text-decoration: none;
+}
+.container-platos-lista{
+	display: flex;
+	flex-wrap: wrap;
+	width: 85%;
+	padding: 0 2% ;
+	row-gap: 40px;
+}
+.platos--content{
+	width: 300px;
+  height: 400px;
+  box-shadow: 5px 10px 18px #888888;
+  border-radius: 20px;
+  margin: 0 43px;
+}
+.container-nombre-informacion{
+	height: 60px;
+  margin: 11px 0;
+	display: flex;
+}
+.nombre-plato{
+	color: #000;
+	font-size: 1.5em;
+	text-align: center;
+	width: 90%;
+	line-height: 70px;
+	margin: auto;
+}
+.precio{
+	color: #C92D39;
+  font-size: 30px;
+  padding: 0 80px;
+  text-shadow: 0.6px 0.6px #000, -0.6px -0.6px #000;
+}
+.boton--ordenar{
+	background-color: #C92D39;
+  display: flex;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  justify-content: space-evenly;
+  margin-left: 15%;
+  margin-top: 20px;
+}
+.ordenar--text{
+	line-height: 50px;
+	color: #fff;
+	font-size: 24px;
+	font-style: italic;
+}
+.shopping--cart--style{
+	margin: 9px 0;
+}
+.shopping--cart--container{
+	background: #C92D39;
+	border-radius:50%;
+	height: 46px;
+	width: 46px;
+	text-align: center;
+	align-content: center;
+	margin: 2px 0;
+
+}
+.shopping--cart--container:hover{
+	background-color: #ffd97a;
+}
+
+/* ESTILOS SCROLLBAR */
+::-webkit-scrollbar{
+	width: 10px;
+	background-color: #C92D39;
+	border-radius: 2px;
+}
+::-webkit-scrollbar-thumb{
+	background-color: #FCC438;
+	border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover{
+	background: linear-gradient(360deg, rgba(252,196,56,1) 37%, rgba(201,45,57,1) 100%);
+}
+
+
+
+/* ESTILOS IMAGENES */
+.imagen-logo{
+	width: 162px;
+}
+
+#imagenInformacion{
+	width: 20px;
+}
+.shopping--cart--style{
+	width: 30px;
+}
+.imagen-plato{
+	width: 100%;
+	border-top-left-radius: 10px ;
+	border-top-right-radius: 10px ;
+	height: 180px;
+	text-align: center;
+	object-fit: contain;
+}
+a{
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+/* 768px */
+@media only screen and (max-width: 	47.5em){
+    body{
+        font-size: 50%;
+        text-align: center;
+    }
+		.imagen-logo{
+			width: 130px;
+		}
+		.titulo-pagina{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.titulo{
+			font-size: 5em;
+		}
+		.carrito{
+			width: 50px;
+		}
+		.cantidad-productos{
+			height: 2em;
+			width: 2em;
+			font-size: 1.5em;
+		}
+		.option--variedad{
+			width: 200px;
+			font-size: 1.5em;
+		}
+		.content--variedades{
+			font-size: 1.5em;
+		}
+}
