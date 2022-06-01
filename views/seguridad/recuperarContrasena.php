@@ -10,6 +10,7 @@ if (isset($_POST['correo'])) {
   if ($cliente != null) {
     //?create recovery key
     $recoveryToken = uniqid('', true);
+    //create current datime + 5
     $minutosExtra = 5;
     $tiempo = new DateTime();
     $tiempo->add(new DateInterval('PT' . $minutosExtra . 'M'));

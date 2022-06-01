@@ -23,7 +23,7 @@ class RecoverPasswordAdapter
     return $id;
   }
 
-  static function validarToken($recoveryToken)
+  static function validarToken($token)
   {
     $db = new ConeccionProyectoModular();
     $sql = "SELECT cli.correo
@@ -31,10 +31,10 @@ class RecoverPasswordAdapter
       INNER JOIN proyecto_modular.clientes as cli
       on re.idCliente = cli.idCliente
       WHERE 
-      re.recoveryToken = '$recoveryToken'
-      AND re.fueUsado=0 
-      AND fechaVencimiento > NOW();
-      ";
+      re.recoveryToken = '$token'
+      AND re.fueUsado = 0 
+      AND re.fechaVencimiento > NOW()
+      ;";
     $tabla = $db->consulta($sql);
     // echo $sql;
     $db->cerrar();
@@ -43,5 +43,17 @@ class RecoverPasswordAdapter
     } else {
       return null;
     }
+  }
+
+  static function usarToken($token)
+  {
+    $sql = "UPDATE proyecto_modular.recoverpassword
+    SET fueUsado = 1
+    WHERE recoveryToken = '$token'
+    ";
+    $db = new ConeccionProyectoModular();
+    $esCorrecto = $db->actualizar($sql);
+    $db->cerrar();
+    return $esCorrecto;
   }
 }

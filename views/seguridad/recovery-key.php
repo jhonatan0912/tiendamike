@@ -3,33 +3,27 @@ require_once __DIR__ . '/../../controllers/recoverPasswordAdapter.php';
 require_once __DIR__ . '/../../controllers/clienteAdapter.php';
 
 $tokenCorrecto = FALSE;
-if (
-  isset($_POST['token'])
-  && isset($_POST['password'])
-  && isset($_POST['re-password'])
-
-) {
-  $recoveryToken = $_GET['token'];
-  $password = $_POST['password'];
-  $rePassword = $_POST['re-password'];
-  $correo = RecoverPasswordAdapter::validarToken($recoveryToken);
-  if ($correo != null && $password == $rePassword) {
+if (isset($_GET['token'])) {
+  $token = $_GET['token'];
+  $correo = RecoverPasswordAdapter::validarToken($token);
+  if ($correo != null) {
     $tokenCorrecto = TRUE;
-    ClienteAdapter::cambiarClave($correo, $password);
+  } else {
+    $tokenCorrecto = FALSE;
   }
 }
 ?>
 <?php if ($tokenCorrecto) : ?>
   <div>
-    <form action="" method="POST">
-      <input type="hidden" name="token" value="<?php echo $recoveryToken ?>">
+    <form action="formCambiarClave.php" method="POST">
+      <input type="hidden" name="token" value="<?php echo $token ?>">
       <div>
         <label for="password">Contraseña</label>
         <input type="password" name="password">
       </div>
       <div>
         <label for="re-password">Confirmar contraseña</label>
-        <input type="password" name="re-password">
+        <input type="password" name="rePassword">
       </div>
       <div>
         <input type="submit" value="Cambiar la contraseña">

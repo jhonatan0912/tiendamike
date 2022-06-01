@@ -94,11 +94,11 @@ class ClienteAdapter
         $db = new ConeccionProyectoModular();
         $hash = hash('sha512', $password);
         $sql = "UPDATE proyecto_modular.clientes
-        SET `password` = '$password'
-        WHERE
-        `correo`='$correo';    
+        SET password = '$hash'
+        WHERE correo='$correo';    
         ";
         $esCorrecto = $db->actualizar($sql);
+        // echo $sql;
         return $esCorrecto;
     }
 }
