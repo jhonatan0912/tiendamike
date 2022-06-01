@@ -88,4 +88,17 @@ class ClienteAdapter
         $numberClients = $db->getNumberData($sql);
         return $numberClients;
     }
+
+    static function cambiarClave($correo, $password)
+    {
+        $db = new ConeccionProyectoModular();
+        $hash = hash('sha512', $password);
+        $sql = "UPDATE proyecto_modular.clientes
+        SET `password` = '$password'
+        WHERE
+        `correo`='$correo';    
+        ";
+        $esCorrecto = $db->actualizar($sql);
+        return $esCorrecto;
+    }
 }

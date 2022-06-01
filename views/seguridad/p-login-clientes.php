@@ -56,7 +56,7 @@ if (isset($_POST['correo']) && isset($_POST['password'])) {
 						intentelo nuevamente
 					</p>
 					<p>
-						<a class="btn-recoveryPassword" href="#">
+						<a class="btn-recoveryPassword" href="/views/seguridad/recuperarContrasena.php">
 							Recuperar Contraseña
 						</a>
 					</p>
