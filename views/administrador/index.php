@@ -38,6 +38,9 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
         <img class="img-logo" src="/assets/imagenes/logochifa.png">
       </a>
     </div>
+    <div class="title-container">
+      Panel Administrador
+    </div>
   </div>
 
   <div class="container-page-mid">

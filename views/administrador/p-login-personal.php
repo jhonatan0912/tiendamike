@@ -43,9 +43,9 @@ if (isset($_POST['dni']) && isset($_POST['password'])) {
 
 		<h1>Login</h1>
 
-		<input type="number" name="dni" placeholder="DNI">
+		<input type="number" name="dni" placeholder="DNI" required>
 
-		<input type="password" name="password" placeholder="Password">
+		<input type="password" name="password" placeholder="Password" required>
 
 		<input type="submit" name="login" value="Login">
 

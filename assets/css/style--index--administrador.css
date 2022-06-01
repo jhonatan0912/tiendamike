@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
 *{
 	margin: 0;
 	padding: 0;
@@ -16,6 +17,15 @@ body{
 
 .img-logo{
 	width: 162px;
+}
+
+.title-container{
+	width: calc(100vw - 200px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4em;
+	font-family: 'Akaya Telivigala', cursive;
 }
 
 .options-administrator{
@@ -369,6 +379,7 @@ input[type="date"]{
 
 .formularioHistorySales > form > input[type="date"],input[type="submit"]{
 	margin: 1em 0;
+	text-align: center;
 }
 
 /*? FIN MODAL FILTRADO POR FECHA  */
