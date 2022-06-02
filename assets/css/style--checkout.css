@@ -312,6 +312,8 @@ textarea{
     width: 50%;
     height: 2em;
     outline: none;
+    border-radius: 10px;
+    border: 1px solid ;
 }
 ::placeholder{
     color: rgb(167, 167, 167);
@@ -350,8 +352,6 @@ input[type="radio"]{
 .inp-direccion{
     font-size: 1em;
 }
-
-
 
 
 

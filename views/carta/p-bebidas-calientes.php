@@ -39,7 +39,7 @@ $platos = PlatoAdapter::listarPorIdVariedad(20);
         <div class="platos--content">
 
           <div class="imagen">
-            <img class="imagen-plato" src="<?php echo $plato->imagenPlato; ?>" alt="no imagen">
+            <img class=" imagen-plato" src="<?php echo $plato->imagenPlato; ?>" alt="imagen producto">
           </div>
 
           <div class="container-nombre-informacion">

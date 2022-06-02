@@ -102,6 +102,7 @@ box-shadow: 0 0 10px;
 
 .salir:hover{
 	background-color: #f7b43f;
+	color: #fff;
 }
 
 .redireccion-salir:hover{
