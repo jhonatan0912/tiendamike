@@ -46,9 +46,6 @@ $platos = PlatoAdapter::listarPorIdVariedad(12);
             <p class="nombre-plato">
               <?php echo ucwords($plato->nombrePlato); ?>
             </p>
-            <div class="container-information">
-              <img id="imagenInformacion" src="/assets/imagenes/informacion.png">
-            </div>
           </div>
 
           <div class="container-precio">
