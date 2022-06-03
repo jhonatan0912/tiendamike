@@ -40,4 +40,14 @@ class VentaAdapter
     $numberSales = $db->getNumberData($sql);
     return $numberSales;
   }
+  static function salesChart($date)
+  {
+    $db = new ConeccionProyectoModular();
+    $sql = "SELECT * FROM proyecto_modular.venta
+    WHERE fechaHora LIKE '%$date%';
+    ";
+    // echo $sql;
+    $numberSales = $db->getNumberData($sql);
+    return $numberSales;
+  }
 }

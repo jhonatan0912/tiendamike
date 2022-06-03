@@ -1,8 +1,14 @@
 <?php
 require_once __DIR__ . '/../../controllers/historialVentasAdapter.php';
+require_once __DIR__ . '/../../controllers/ventaAdapter.php';
 require_once __DIR__ . '/../../tools/httpTools.php';
+
 $date = $_POST['date'];
 $historiales = HistorialVentasAdapter::historialByDate($date);
+$numberOfSales = VentaAdapter::salesChart($date);
+$dataPoints = array(
+  array("y" => $numberOfSales, "label" => "$date"),
+);
 if ($historiales == null) {
   HttpTools::redireccionar('/views/administrador/index.php');
 }
@@ -16,6 +22,7 @@ $suma = 0;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/style--historial--ventas.css">
   <link rel="shortcut icon" href="/assets/imagenes/logochifa.png" type="image/x-icon">
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <title>Historial de ventas</title>
 </head>
 
@@ -28,6 +35,10 @@ $suma = 0;
     </div>
     <div class="container-title">
       <div>HISTORIAL DE VENTAS</div>
+    </div>
+  </div>
+  <div class="chart">
+    <div id="chartContainer" style="height: 300px; width: 100%;max-width:380px;">
     </div>
   </div>
   <table>
@@ -92,7 +103,29 @@ $suma = 0;
     <!-- END FILA CON DATOS -->
   </table>
 
-
+  <script>
+    window.onload = function() {
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        exportEnabled: true,
+        theme: "dark1", // "light1", "light2", "dark1", "dark2"
+        title: {
+          text: "Historial de ventas por día"
+        },
+        axisY: {
+          includeZero: true
+        },
+        data: [{
+          type: "bar", //change type to bar, line, area, pie, etc
+          //indexLabel: "{y}", //Shows y value on all Data Points
+          indexLabelFontColor: "#5A5757",
+          indexLabelPlacement: "outside",
+          dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+        }]
+      });
+      chart.render();
+    }
+  </script>
 </body>
 
 </html>

@@ -36,3 +36,8 @@ table{
   background-color: #C92D39;
   color: #fff;
 }
+
+.chart{
+  display: flex;
+  justify-content: center;
+}

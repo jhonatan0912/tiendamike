@@ -85,8 +85,8 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
           REGISTRO DE PERSONAL
         </button>
       </div>
-      <!-- FIN CONTAINER PANEL ADMINISTRADOR -->
     </div>
+    <!-- FIN CONTAINER PANEL ADMINISTRADOR -->
     <div class="statistics">
 
       <div class="statistics__card">
@@ -132,75 +132,73 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
           </strong> Ventas
         </div>
       </div>
-
-      <!-- MODAL FORM HISTORIAL DE VENTAS  -->
-      <section class="formularioHistorySales oculto">
-        <div class="header-form-history">
-          <p>
-            SELECCIONAR FECHA
-          </p>
-          <button class="btn-close-modal" onclick="ocultarFormularioHistorialDeVentas(event)">
-            &times;
-          </button>
+    </div>
+    <!-- MODAL FORM HISTORIAL DE VENTAS  -->
+    <section class="formularioHistorySales oculto">
+      <div class="header-form-history">
+        <p>
+          SELECCIONAR FECHA
+        </p>
+        <button class="btn-close-modal" onclick="ocultarFormularioHistorialDeVentas(event)">
+          &times;
+        </button>
+      </div>
+      <form action="historialDeVentas.php" method="POST">
+        <input type="date" name="date">
+        <input type="submit">
+      </form>
+    </section>
+    <!-- END FORM HISTORIAL DE VENTAS -->
+    <!-- FORM REGISTRO PERSONAL -->
+    <section class="formulario oculto">
+      <div class="header-modal">
+        <p class="title-modal">
+          Registrar nuevo personal
+        </p>
+        <button class="btn-close-modal" onclick="ocultarFormularioDireccion(event)">
+          &times;
+        </button>
+      </div>
+      <form class="form-add-direction" name="form1" action="p-registro-personal.php" method="POST">
+        <div class="inputs-form">
+          <label for="dni">DNI</label>
+          <input type="number" name="dni" required min="1">
         </div>
-        <form action="historialDeVentas.php" method="POST">
-          <input type="date" name="date">
-          <input type="submit">
-        </form>
-      </section>
-
-      <!-- END FORM HISTORIAL DE VENTAS -->
-      <!-- FORM REGISTRO PERSONAL -->
-      <section class="formulario oculto">
-        <div class="header-modal">
-          <p class="title-modal">
-            Registrar nuevo personal
-          </p>
-          <button class="btn-close-modal" onclick="ocultarFormularioDireccion(event)">
-            &times;
-          </button>
+        <div class="inputs-form">
+          <label for="password">PASSWORD</label>
+          <input type="password" name="password" required>
         </div>
-        <form class="form-add-direction" name="form1" action="p-registro-personal.php" method="POST">
-          <div class="inputs-form">
-            <label for="dni">DNI</label>
-            <input type="number" name="dni" required min="1">
-          </div>
-          <div class="inputs-form">
-            <label for="password">PASSWORD</label>
-            <input type="password" name="password" required>
-          </div>
-          <div class="inputs-form">
-            <input type="submit" name="registrarPersonal">
-          </div>
-        </form>
-      </section>
-      <!-- END FORM REGISTRO PERSONAL -->
+        <div class="inputs-form">
+          <input type="submit" name="registrarPersonal">
+        </div>
+      </form>
+    </section>
+    <!-- END FORM REGISTRO PERSONAL -->
+    <script>
+      function mostrarFormularioRegistroPersonal() {
+        event.preventDefault();
+        let formulario = document.querySelector('.formulario.oculto');
+        formulario.className = "formulario";
+      }
 
-      <script>
-        function mostrarFormularioRegistroPersonal() {
-          event.preventDefault();
-          let formulario = document.querySelector('.formulario.oculto');
-          formulario.className = "formulario";
-        }
+      function ocultarFormularioDireccion() {
+        event.preventDefault(); //no hace lo que normalmente haria, submit
+        let formulario = document.querySelector('.formulario');
+        formulario.className = "formulario oculto";
+      }
 
-        function ocultarFormularioDireccion() {
-          event.preventDefault(); //no hace lo que normalmente haria, submit
-          let formulario = document.querySelector('.formulario');
-          formulario.className = "formulario oculto";
-        }
+      function mostrarFormularioHistorialDeVentas() {
+        event.preventDefault(); //no hace lo que normalmente haria, submit
+        let formulario = document.querySelector('.formularioHistorySales.oculto');
+        formulario.className = "formularioHistorySales";
+      }
 
-        function mostrarFormularioHistorialDeVentas() {
-          event.preventDefault(); //no hace lo que normalmente haria, submit
-          let formulario = document.querySelector('.formularioHistorySales.oculto');
-          formulario.className = "formularioHistorySales";
-        }
-
-        function ocultarFormularioHistorialDeVentas() {
-          event.preventDefault(); //no hace lo que normalmente haria, submit
-          let formulario = document.querySelector('.formularioHistorySales');
-          formulario.className = "formularioHistorySales oculto";
-        }
-      </script>
+      function ocultarFormularioHistorialDeVentas() {
+        event.preventDefault(); //no hace lo que normalmente haria, submit
+        let formulario = document.querySelector('.formularioHistorySales');
+        formulario.className = "formularioHistorySales oculto";
+      }
+    </script>
 </body>
 
 </html>
