@@ -108,7 +108,7 @@ if (
 					ADMINISTRAR PLATOS
 				</a>
 			</div>
-			<div class=" option-one marginOptions">
+			<div class="option-one marginOptions">
 				<a href="/views/administrador/p-registro-platos.php" class="fontColorWhite shadowText fontSize">
 					REGISTRO DE PLATOS
 				</a>

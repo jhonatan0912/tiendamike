@@ -45,6 +45,7 @@ class FileTools
         $path = FileTools::pathUpload() . "$tipo/" . $nombre;
         return $path;
     }
+
     static function borrarImagen($path, $tipo)
     {
         $destino = FileTools::directorioUpload();

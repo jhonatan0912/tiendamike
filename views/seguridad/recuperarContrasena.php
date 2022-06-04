@@ -101,18 +101,97 @@ if (isset($_POST['correo'])) {
 ?>
 
 
+<html lang="en">
 
-<div>
-  <form action="" method="POST">
-    <div>
-      <label for="correo">Ingresa tu Correo</label>
-      <input type="email" name="correo" required>
-    </div>
-    <div>
-      <input type="submit" value="Recibir correo para restablecer contraseña">
-    </div>
-    <div class="error">
-      <?php echo $error; ?>
-    </div>
-  </form>
-</div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar contraseña</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+    }
+
+    .container {
+      width: 480px;
+      margin: 10% auto;
+      /* background-color: green; */
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #000;
+      border-radius: 10px;
+      background-color: #CB0620;
+    }
+
+    form {
+      width: 400px;
+      margin: auto;
+      /* background-color: blue; */
+      text-align: center;
+    }
+
+    h2 {
+      color: #fff;
+    }
+
+    label {
+      font-size: 1.5em;
+      color: #fff;
+      text-shadow: 0 0 3px #000, 0 0 5px #000;
+    }
+
+    form>div {
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+    }
+
+    input[type="email"] {
+      width: 300px;
+      margin: 5px auto;
+      height: 30px;
+      border-radius: 6px;
+      outline: none;
+      border: 1px solid #000;
+    }
+
+    input[type="submit"] {
+      width: 350px;
+      height: 40px;
+      margin: auto;
+      background-color: #000;
+      color: #fff;
+      font-weight: 900;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form action="" method="POST">
+      <h2>Recuperar contraseña</h2>
+      <hr>
+      <div>
+        <label for="correo">Ingresa tu correo</label>
+        <input type="email" name="correo" required>
+      </div>
+      <div>
+        <input type="submit" value="Recibir correo para restablecer contraseña">
+      </div>
+      <div class="error">
+        <?php echo $error; ?>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
