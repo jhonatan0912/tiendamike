@@ -25,7 +25,8 @@ if (
 }
 ?>
 <div>
-  <?php if ($esCorrecto) : ?>
+  <?php if ($esCorrecto) :
+  ?>
     <p>
       Tu clave se cambio correctamente,
       vuelve a ingresar con tu nueva clave
@@ -36,5 +37,6 @@ if (
     <p>
       Algo salio mal intentalo de nuevo
     </p>
-  <?php endif; ?>
+  <?php endif;
+  ?>
 </div>
