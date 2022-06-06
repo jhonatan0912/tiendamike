@@ -52,7 +52,11 @@ font-family: 'Akaya Telivigala', cursive;
 }
 
 .main-high__hyperlink:hover{
-	border-bottom: 2px solid #000;
+	color: rgb(117, 117, 117);
+}
+
+.img-login{
+	width: 50px;
 }
 
 #loginr_p{	

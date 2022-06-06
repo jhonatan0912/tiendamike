@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/tools/httpTools.php';
 $personalLogeado = HttpTools::validarPersonalLogeado();
+$clienteLogeado = HttpTools::validarClienteLogeado();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +39,19 @@ $personalLogeado = HttpTools::validarPersonalLogeado();
 						Nosotros
 					</a>
 				</div>
+				<?php if ($clienteLogeado) : ?>
+					<div class="main-high__fourthOption">
+						<a href="/views/shopping/checkout.php" class="main-high__hyperlink">
+							<img class="img-login" src="/assets/imagenes/user-login.png">
+						</a>
+					</div>
+				<?php else : ?>
+					<div class="main-high__fourthOption">
+						<a href="/views/seguridad/p-login-clientes.php" class="main-high__hyperlink">
+							<img class="img-login" src="/assets/imagenes/user-login.png">
+						</a>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="mid">
