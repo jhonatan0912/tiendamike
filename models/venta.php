@@ -44,7 +44,7 @@ class Venta
     );
     return $venta;
   }
-  static function desdeCliente($fila)
+  static function desdeVenta($fila)
   {
     $venta = Venta::desdeFila($fila);
     $venta->idCliente = $fila["idCliente"];

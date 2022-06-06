@@ -2,13 +2,8 @@
 require_once __DIR__ . '/../../controllers/historialVentasAdapter.php';
 require_once __DIR__ . '/../../controllers/ventaAdapter.php';
 require_once __DIR__ . '/../../tools/httpTools.php';
-
 $date = $_POST['date'];
 $historiales = HistorialVentasAdapter::historialByDate($date);
-$numberOfSales = VentaAdapter::salesChart($date);
-$dataPoints = array(
-  array("y" => $numberOfSales, "label" => "$date"),
-);
 if ($historiales == null) {
   HttpTools::redireccionar('/views/administrador/index.php');
 }

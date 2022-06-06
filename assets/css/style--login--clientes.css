@@ -11,7 +11,6 @@ body{
 	position: absolute;
 	top: 35%;
 	left: 50%;
-	transform: translate(-505,-50%);
 	background: #CB0620;
 	text-align: center;
 	border-radius: 15px;
@@ -45,13 +44,6 @@ body{
 .box input[type ="email"]::placeholder,.box input[type= "password"]::placeholder{
 	color: #fff;
 }
-
-
-.box input[type="email"]:focus, .box input[type="password"]:focus {
-		width: 280px;
-		border-color: #980001;
-}
-
 
 .box input[type ="submit"]{
 	border: 0;

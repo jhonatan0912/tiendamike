@@ -97,7 +97,7 @@ $factura = 2;
     <!-- listado de productos del carrito de compras -->
     <div class="products-container">
       <div class="orders-container">
-        <table>
+        <table required>
           <?php foreach ($carrito as $item) : ?>
             <tr>
               <!-- imagen -->
@@ -207,7 +207,7 @@ $factura = 2;
             <hr>
             <div class="numero-documento">
               <label for="numeroDocumento"><strong>Numero de documento: (DNI/RUC)</strong></label>
-              <input type="number" name="numeroDocumento" placeholder="999999999" required min="1">
+              <input type="number" name="numeroDocumento" placeholder="Ej: 47382916" required min="1">
             </div>
             <!-- <hr> -->
             <div>

@@ -41,7 +41,7 @@ form{
   /* background-color: green; */
   width: 100%;
   display: flex;
-  flex-wrap: wrap; 
+  flex-direction: column; 
 }
 form > div{
   width: 45%;

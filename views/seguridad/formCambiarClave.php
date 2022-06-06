@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../controllers/recoverPasswordAdapter.php';
 require_once __DIR__ . '/../../controllers/clienteAdapter.php';
+require_once __DIR__ . '/../../tools/httpTools.php';
 
 
 $esCorrecto = FALSE;
@@ -20,23 +21,9 @@ if (
     $res = ClienteAdapter::cambiarClave($correo, $password);
     if ($res) {
       $esCorrecto = TRUE;
+      HttpTools::redireccionar('/views/plantilla/recoveryPasswordSuccesfull.html');
+    } else {
+      HttpTools::redireccionar('/views/plantilla/recoveryPasswordFailed.html');
     }
   }
 }
-?>
-<div>
-  <?php if ($esCorrecto) :
-  ?>
-    <p>
-      Tu clave se cambio correctamente,
-      vuelve a ingresar con tu nueva clave
-      <br>
-      <a href="/views/seguridad/p-login-clientes.php">ingresar</a>
-    </p>
-  <?php else : ?>
-    <p>
-      Algo salio mal intentalo de nuevo
-    </p>
-  <?php endif;
-  ?>
-</div>

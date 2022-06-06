@@ -43,7 +43,7 @@ $perfil = ClienteAdapter::perfilCliente($idCliente);
             </div>
             <div class="correo-container ">
                 <label for="">CORREO</label>
-                <input type="text" name="" value="<?php echo $perfil->correo ?>">
+                <input type="text" name="" value="<?php echo $perfil->correo ?>" readonly>
             </div>
         </form>
     </div>

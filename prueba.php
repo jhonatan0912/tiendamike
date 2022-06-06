@@ -177,10 +177,12 @@ ob_start();
 
       </div>
     </div>
+    <a href=javascript:window.print()>Imprimir Comprobante</a>
   </div>
 </body>
 
 </html>
 <?php
 $comprobante = ob_get_clean();
+echo $comprobante;
 ?>

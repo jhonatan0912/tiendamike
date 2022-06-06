@@ -209,6 +209,17 @@ ob_start();
       </div>
     </div>
   </div>
+  <div style="width: 200px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    " href=javascript:window.print()>
+    Imprimir comprobante
+    </a>
+  </div>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../controllers/recoverPasswordAdapter.php';
 require_once __DIR__ . '/../../controllers/clienteAdapter.php';
+require_once __DIR__ . '/../../tools/httpTools.php';
 
 $tokenCorrecto = FALSE;
 if (isset($_GET['token'])) {
@@ -10,6 +11,7 @@ if (isset($_GET['token'])) {
     $tokenCorrecto = TRUE;
   } else {
     $tokenCorrecto = FALSE;
+    HttpTools::redireccionar('/errores/tokenInvalido.html');
   }
 }
 ?>
@@ -109,11 +111,4 @@ if (isset($_GET['token'])) {
   </body>
 
   </html>
-<?php else : ?>
-  <p>
-    El token de recuperacion es invalido o expiró.
-    Genere un codigo nuevamente
-    <br>
-    <a href="/views/seguridad/recuperarContrasena.php">Generar nuevo correo de recuperación</a>
-  </p>
 <?php endif; ?>
