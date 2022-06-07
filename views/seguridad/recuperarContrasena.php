@@ -60,11 +60,7 @@ if (isset($_POST['correo'])) {
   </style>
 </head>
 <body>
-<div class="container">
-  <div class="container__logo">
-    <img src="https://lh3.googleusercontent.com/2GxKiMQc2mnPmm-4K7FKigT7fbDnIr15oTPaM1I1jqPfNu9fS1tfYIFLp21i_MD1PZFN=s85">
-  </div>
-  <hr>
+<div class="container" style="text-align:center;">
   <div class="container__body-mail">
   <p class="subject">
     Correo de reestablecimiento de contraseña

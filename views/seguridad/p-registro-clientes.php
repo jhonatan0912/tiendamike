@@ -27,7 +27,7 @@ if (isset($_POST['registrarCliente'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>REGISTRO CLIENTES</title>
 	<link rel="stylesheet" href="../../assets/css/style--registro--clientes.css">
-	<link rel="icon" href="../imagenes/logochifa.png">
+	<link rel="icon" href="/assets/imagenes/logochifa.png">
 </head>
 
 <body>

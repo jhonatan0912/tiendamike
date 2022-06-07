@@ -15,6 +15,8 @@ if (isset($_POST['correo']) && isset($_POST['password'])) {
 		$_SESSION['perfil'] = $perfil;
 		if (isset($_GET['redireccionar'])) {
 			HttpTools::redireccionar($_GET['redireccionar']);
+		} else {
+			HttpTools::redireccionar('/views/shopping/checkout.php');
 		}
 	} else {
 		$falloLogueo = true;

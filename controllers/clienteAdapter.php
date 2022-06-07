@@ -15,6 +15,7 @@ class ClienteAdapter
                 AND password ='$hash'
                 ";
         $db = new ConeccionProyectoModular();
+        echo $sql;
         $tabla = $db->consulta($sql);
         $db->cerrar();
         if (count($tabla) > 0) {

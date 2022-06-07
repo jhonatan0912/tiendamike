@@ -216,8 +216,9 @@ ob_start();
     align-items: center;
     text-align: center;
     font-weight: 600;
-    " href=javascript:window.print()>
-    Imprimir comprobante
+    ">
+    <a href=javascript:window.print()>
+      Imprimir comprobante
     </a>
   </div>
 </body>
