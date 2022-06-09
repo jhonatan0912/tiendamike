@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../../models/plato.php';
-require_once __DIR__ . '/../../controllers/platoAdapter.php';
+require_once __DIR__ . '/../../models/zapatilla.php';
+require_once __DIR__ . '/../../controllers/zapatillaAdapter.php';
 require_once __DIR__ . '/../../controllers/variedadesAdapter.php';
 require_once __DIR__ . '/../..//controllers/personalAdapter.php';
 require_once __DIR__ . '/../../tools/fileTools.php';
@@ -18,7 +18,7 @@ if (isset($_SESSION['personal'])) {
 $variedades = VariedadAdapter::listar();
 
 // VALIDAR REGISTRO DE PLATO
-$imagenPlato = '';
+$imagenZapatilla = '';
 if (
 	isset($_POST['idVariedad']) &&
 	isset($_POST['nombrePlato']) &&
@@ -26,30 +26,30 @@ if (
 	isset($_POST['precioPlato'])
 ) {
 	$idVariedad = $_POST['idVariedad'];
-	$nombrePlato = $_POST['nombrePlato'];
-	$descripcionPlato = $_POST['descripcionPlato'];
-	$precioPlato = $_POST['precioPlato'];
+	$nombreZapatilla = $_POST['nombrePlato'];
+	$descripcionZapatilla = $_POST['descripcionPlato'];
+	$precioZapatilla = $_POST['precioPlato'];
 
-	$plato = new Plato(
+	$plato = new Zapatilla(
 		$idVariedad,
 		0,
-		$imagenPlato,
-		$nombrePlato,
-		$descripcionPlato,
-		$precioPlato
+		$imagenZapatilla,
+		$nombreZapatilla,
+		$descripcionZapatilla,
+		$precioZapatilla
 	);
 
-	// echo ">>>" . ($plato->idPlato) . "<<<";
-	$id = PlatoAdapter::crearPlato($plato);
+	// echo ">>>" . ($plato->idZapatilla) . "<<<";
+	$id = ZapatillaAdapter::crearZapatilla($plato);
 	if ($id) {
-		if (isset($_FILES['imagenPlato'])) {
-			// foreach ($_FILES['imagenPlato'] as $llave => $valor) {
+		if (isset($_FILES['imagenZapatilla'])) {
+			// foreach ($_FILES['imagenZapatilla'] as $llave => $valor) {
 			// 	echo $llave . "->" . $valor . "<br>";
 			// }
-			$path = FileTools::subirImagen($_FILES['imagenPlato'], 'platos', $id);
-			$plato = PlatoAdapter::obtenerUno($id);
-			$plato->imagenPlato = $path;
-			PlatoAdapter::actualizarPlato($plato);
+			$path = FileTools::subirImagen($_FILES['imagenZapatilla'], 'platos', $id);
+			$plato = ZapatillaAdapter::obtenerUno($id);
+			$plato->imagenZapatilla = $path;
+			ZapatillaAdapter::actualizarZapatilla($plato);
 		}
 		echo "<h1 style='background-color:#000;color:#fff;text-align:center;'>REGISTRADO CORRECTAMENTE</h1>";
 	} else {
@@ -67,7 +67,7 @@ if (
 	<link rel="stylesheet" type="text/css" href="/assets/css/style--index--administrador.css">
 	<link rel="shortcut icon" href="/assets/imagenes/logoTienda.png" type="image/x-icon">
 	<script src="https://kit.fontawesome.com/a413ea44fb.js" crossorigin="anonymous"></script>
-	<title>REGISTRO PLATOS</title>
+	<title>REGISTRO ZAPATILLAS</title>
 </head>
 
 <body>
@@ -95,7 +95,7 @@ if (
 					</a>
 				</div>
 				<div class="option-one marginOptions">
-					<a href="/views/administrador/p-registro-platos.php" class="fontColorWhite shadowText fontSize">
+					<a href="/views/administrador/p-registro-zapatillas.php" class="fontColorWhite shadowText fontSize">
 						REGISTRO DE ZAPATILLAS
 					</a>
 				</div>
@@ -123,11 +123,11 @@ if (
 		</div>
 		<!-- FIN CONTAINER PANEL ADMINISTRADOR -->
 		<div class="container_mid">
-			<form class="form-register-plato" action="p-registro-platos.php" method="POST" enctype="multipart/form-data">
+			<form class="form-register-plato" action="/views/administrador/p-registro-zapatillas.php" method="POST" enctype="multipart/form-data">
 
 
 				<div class="upload-image-container">
-					<input type="file" name="imagenPlato" accept="image/png, image/jpeg">
+					<input type="file" name="imagenZapatilla" accept="image/png, image/jpeg">
 				</div>
 
 				<br>

@@ -1,14 +1,14 @@
 <?php
-require_once __DIR__ . '/../../controllers/platoAdapter.php';
+require_once __DIR__ . '/../../controllers/zapatillaAdapter.php';
 require_once __DIR__ . '/../../tools/httpTools.php';
 require_once __DIR__ . '/../../tools/fileTools.php';
 
 $idPlato = $_GET['idPlato'];
 
 if (isset($idPlato)) {
-  $plato = PlatoAdapter::obtenerUno($idPlato);
-  $respuesta = PlatoAdapter::eliminar($idPlato);
-  FileTools::borrarImagen($plato->imagenPlato, "platos");
+  $plato = ZapatillaAdapter::obtenerUno($idPlato);
+  $respuesta = ZapatillaAdapter::eliminar($idPlato);
+  FileTools::borrarImagen($plato->imagenZapatilla, "platos");
 
   if ($respuesta === TRUE) {
 

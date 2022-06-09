@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../tools/httpTools.php';
 require_once __DIR__ . '/../../controllers/ventaAdapter.php';
 require_once __DIR__ . '/../../models/cliente.php';
 require_once __DIR__ . '/../../controllers/ventaDetalleAdapter.php';
-require_once __DIR__ . '/../../models/plato.php';
+require_once __DIR__ . '/../../models/zapatilla.php';
 require_once __DIR__ . '/../../tools/mailTools.php';
 require_once __DIR__ . '/../../controllers/direccionAdapter.php';
 date_default_timezone_set('America/Lima');
@@ -23,7 +23,7 @@ $venta = new Venta($cliente->idCliente, 0, $celular, '', $direccion, $fechaHora,
 $idVenta = VentaAdapter::crear($venta);
 $direccionListar = DireccionAdapter::listar($cliente->idCliente);
 foreach ($carrito as $item) {
-  $ventaDetalle = new VentaDetalle($idVenta, 0, $item['producto']->idPlato, $item['cantidad'], $item['producto']->precioPlato);
+  $ventaDetalle = new VentaDetalle($idVenta, 0, $item['producto']->idZapatilla, $item['cantidad'], $item['producto']->precioZapatilla);
   $vdId = VentaDetalleAdapter::crear($ventaDetalle);
   CarritoTools::elmininarTodosProductos();
 }
@@ -125,13 +125,13 @@ ob_start();
                     <?php echo $item['cantidad']; ?>
                   </td>
                   <td style='width:150px'>
-                    <?php echo $item['producto']->nombrePlato; ?>
+                    <?php echo $item['producto']->precioZapatilla ?>
                   </td>
                   <td style='width:100px;text-align:center'>
-                    S/ <?php echo $item['producto']->precioPlato; ?>
+                    S/ <?php echo$item['producto']->precioZapatilla; ?>
                   </td>
                   <td style='width:100px;text-align:center'>
-                    S/ <?php echo $item['producto']->precioPlato * $item['cantidad']; ?>
+                    S/ <?php echo$item['producto']->precioZapatilla * $item['cantidad']; ?>
                   </td>
                 </tr>
               <?php endforeach; ?>
@@ -145,7 +145,7 @@ ob_start();
               <?php
               $subtotal = 0;
               foreach ($carrito as $item) {
-                $precio = $item['producto']->precioPlato;
+                $precio =$item['producto']->precioZapatilla;
                 $cantidad = $item['cantidad'];
                 $costo = $precio * $cantidad;
                 $subtotal = $subtotal + $costo;
@@ -163,7 +163,7 @@ ob_start();
               $subtotal = 0;
               $total = 0;
               foreach ($carrito as $item) {
-                $precio = $item['producto']->precioPlato;
+                $precio =$item['producto']->precioZapatilla;
                 $cantidad = $item['cantidad'];
                 $costo = ($precio * $cantidad) + 20;
               }

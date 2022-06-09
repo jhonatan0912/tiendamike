@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../controllers/personalAdapter.php';
 require_once __DIR__ . '/../../controllers/clienteAdapter.php';
-require_once __DIR__ . '/../../controllers/platoAdapter.php';
+require_once __DIR__ . '/../../controllers/zapatillaAdapter.php';
 require_once __DIR__ . '/../../controllers/ventaAdapter.php';
 require_once __DIR__ . '/../../controllers/personalAdapter.php';
 require_once __DIR__ . '/../../tools/httpTools.php';
@@ -16,7 +16,7 @@ if (isset($_SESSION['personal'])) {
 }
 
 $numberOfClients = ClienteAdapter::getNumberOfClients();
-$numberProducts = PlatoAdapter::getNumberOfProducts();
+$numberProducts = ZapatillaAdapter::getNumberOfProducts();
 $numberSales = VentaAdapter::getNumberOfSales();
 $numberOfStaff = PersonalAdapter::getNumberOfStaff();
 ?>
@@ -60,7 +60,7 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
         </div>
 
         <div class=" option-one marginOptions">
-          <a href="/views/administrador/p-registro-platos.php" class="fontColorWhite shadowText fontSize">
+          <a href="/views/administrador/p-registro-zapatillas.php" class="fontColorWhite shadowText fontSize">
             REGISTRO DE ZAPATILLAS
           </a>
         </div>

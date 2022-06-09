@@ -13,9 +13,9 @@ class HistorialVentas
   public $tipoComprobante;
   public $numeroDocumento;
   public $nombreVariedad;
-  public $idPlato;
-  public $nombrePlato;
-  public $precioPlato;
+  public $idZapatilla;
+  public $nombreZapatilla;
+  public $precioZapatilla;
   function __construct(
     $idVenta,
     $nombres,
@@ -28,9 +28,9 @@ class HistorialVentas
     $tipoComprobante,
     $numeroDocumento,
     $nombreVariedad,
-    $idPlato,
-    $nombrePlato,
-    $precioPlato
+    $idZapatilla,
+    $nombreZapatilla,
+    $precioZapatilla
   ) {
     $this->idVenta = $idVenta;
     $this->nombres = $nombres;
@@ -43,9 +43,9 @@ class HistorialVentas
     $this->tipoComprobante = $tipoComprobante;
     $this->numeroDocumento = $numeroDocumento;
     $this->nombreVariedad = $nombreVariedad;
-    $this->idPlato = $idPlato;
-    $this->nombrePlato = $nombrePlato;
-    $this->precioPlato = $precioPlato;
+    $this->idZapatilla = $idZapatilla;
+    $this->nombreZapatilla = $nombreZapatilla;
+    $this->precioZapatilla = $precioZapatilla;
   }
   static function desdeFila($fila)
   {
@@ -61,9 +61,9 @@ class HistorialVentas
       $fila['tipoComprobante'],
       $fila['numeroDocumento'],
       $fila['nombreVariedad'],
-      $fila['idPlato'],
-      $fila['nombrePlato'],
-      $fila['precioPlato']
+      $fila['idZapatilla'],
+      $fila['nombreZapatilla'],
+      $fila['precioZapatilla']
     );
     return $historial;
   }
@@ -81,8 +81,8 @@ class HistorialVentas
     $historial->tipoComprobante = $fila['tipoComprobante'];
     $historial->numeroDocumento = $fila['numeroDocumento'];
     $historial->nombreVariedad = $fila['nombreVariedad'];
-    $historial->idPlato = $fila['idPlato'];
-    $historial->nombrePlato = $fila['nombrePlato'];
-    $historial->precioPlato = $fila['precioPlato'];
+    $historial->idZapatilla = $fila['idZapatilla'];
+    $historial->nombreZapatilla = $fila['nombreZapatilla'];
+    $historial->precioZapatilla = $fila['precioZapatilla'];
   }
 }

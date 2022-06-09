@@ -4,7 +4,7 @@ class VentaDetalle
 {
   public $idVenta;
   public $idVentaDetalle;
-  public $idPlato;
+  public $idZapatilla;
   public $cantidad;
   public $precioUnitario;
 
@@ -12,7 +12,7 @@ class VentaDetalle
 
     $idVenta,
     $idVentaDetalle,
-    $idPlato,
+    $idZapatilla,
     $cantidad,
     $precioUnitario
 
@@ -20,7 +20,7 @@ class VentaDetalle
   ) {
     $this->idVenta = $idVenta;
     $this->idVentaDetalle = $idVentaDetalle;
-    $this->idPlato = $idPlato;
+    $this->idZapatilla = $idZapatilla;
     $this->cantidad = $cantidad;
     $this->precioUnitario = $precioUnitario;
   }
@@ -29,7 +29,7 @@ class VentaDetalle
     $ventaDetalle = new VentaDetalle(
       $fila['idVenta'],
       $fila['idVentaDetalle'],
-      $fila['idPlato'],
+      $fila['idZapatilla'],
       $fila['cantidad'],
       $fila['precioUnitario']
     );
@@ -40,7 +40,7 @@ class VentaDetalle
     $ventaDetalle = VentaDetalle::desdeFila($fila);
     $ventaDetalle->idVenta = $fila["idVenta"];
     $ventaDetalle->idVentaDetalle = $fila["idVentaDetalle"];
-    $ventaDetalle->idPlato = $fila["idPlato"];
+    $ventaDetalle->idZapatilla = $fila["idZapatilla"];
     $ventaDetalle->cantidad = $fila["cantidad"];
     $ventaDetalle->precioUnitario = $fila["precioUnitario"];
     return $ventaDetalle;

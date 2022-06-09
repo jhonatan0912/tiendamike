@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../../models/cliente.php';
-require_once __DIR__ . '/../../controllers/platoAdapter.php';
+require_once __DIR__ . '/../../controllers/zapatillaAdapter.php';
 require_once __DIR__ . '/../../tools/carritoTools.php';
 require_once __DIR__ . '/../../tools/httpTools.php';
 require_once __DIR__ . '/../../controllers/direccionAdapter.php';
@@ -19,7 +19,7 @@ $carrito = CarritoTools::obtener();
  */
 $subtotal = 0;
 foreach ($carrito as $item) {
-  $precio = $item['producto']->precioPlato;
+  $precio = $item['producto']->precioZapatilla;
   $cantidad = $item['cantidad'];
   $costo = $precio * $cantidad;
   $subtotal = ($subtotal + $costo) + 20;;
@@ -102,20 +102,20 @@ $factura = 2;
             <tr>
               <!-- imagen -->
               <td class="imagen-producto">
-                <img class="imagen-producto" src="<?php echo $item['producto']->imagenPlato; ?>" height="100px">
+                <img class="imagen-producto" src="<?php echo $item['producto']->imagenZapatilla; ?>" height="100px">
               </td>
               <!-- nombreproducto -->
               <td><strong>
-                  <?php echo ucwords($item['producto']->nombrePlato); ?>
+                  <?php echo ucwords($item['producto']->nombreZapatilla); ?>
                 </strong>
               </td>
               <!-- descripcion producto -->
               <td>
-                <?php echo ucwords($item['producto']->descripcionPlato); ?>
+                <?php echo ucwords($item['producto']->descripcionZapatilla); ?>
               </td>
               <!-- precio producto -->
               <td>
-                S/<?php echo $item['producto']->precioPlato; ?>
+                S/<?php echo $item['producto']->precioZapatilla; ?>
               </td>
               <!-- cantidad de productos deseado -->
               <td>
@@ -150,7 +150,7 @@ $factura = 2;
 
               <!-- boton eliminar producto del carrito de compras  -->
               <td>
-                <a href="/views/shopping/p-carrito-compras.php?eliminar=<?php echo $item['producto']->idPlato; ?>">
+                <a href="/views/shopping/p-carrito-compras.php?eliminar=<?php echo $item['producto']->idZapatilla; ?>">
                   <i class="fas fa-times-circle"></i>
                 </a>
               </td>

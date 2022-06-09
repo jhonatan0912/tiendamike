@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../controllers/platoAdapter.php';
+require_once __DIR__ . '/../../controllers/zapatillaAdapter.php';
 require_once __DIR__ . '/../../tools/httpTools.php';
 require_once __DIR__ . '/../../controllers/variedadesAdapter.php';
 require_once __DIR__ . '/../../tools/fileTools.php';
@@ -9,7 +9,7 @@ $plato;
 $guardado = FALSE;
 $errores = [];
 if (isset($idPlato)) {
-  $plato = PlatoAdapter::obtenerUno($idPlato);
+  $plato = ZapatillaAdapter::obtenerUno($idPlato);
   if ($plato != null) {
     if (
       isset($_POST['idVariedad']) &&
@@ -18,17 +18,17 @@ if (isset($idPlato)) {
       isset($_POST['precioPlato'])
     ) {
       $plato->idVariedad = $_POST['idVariedad'];
-      $plato->nombrePlato = $_POST['nombrePlato'];
+      $plato->nombreZapatilla = $_POST['nombrePlato'];
       $plato->descripcionPlato = $_POST['descripcionPlato'];
-      $plato->precioPlato = $_POST['precioPlato'];
+      $plato->precioZapatilla = $_POST['precioPlato'];
       if (
-        isset($_FILES['imagenPlato']) &&
-        $_FILES['imagenPlato']['name']
+        isset($_FILES['imagenZapatilla']) &&
+        $_FILES['imagenZapatilla']['name']
       ) {
-        $path = FileTools::subirImagen($_FILES['imagenPlato'], 'platos', $idPlato);
-        $plato->imagenPlato = $path;
+        $path = FileTools::subirImagen($_FILES['imagenZapatilla'], 'platos', $idPlato);
+        $plato->imagenZapatilla = $path;
       }
-      $res = PlatoAdapter::actualizarPlato($plato);
+      $res = ZapatillaAdapter::actualizarZapatilla($plato);
 
       if ($res === FALSE) {
         $errores[] = "no se pudo actualizar el plato";
@@ -66,9 +66,9 @@ if (isset($idPlato)) {
   <form class="form-register-plato" method="POST" action="" enctype="multipart/form-data">
     <br>
     <div class="imagen-plato">
-      <img class="imagen--plato" src="<?php echo $plato->imagenPlato; ?>">
+      <img class="imagen--plato" src="<?php echo $plato->imagenZapatilla; ?>">
       <div class="update-image-plato">
-        <input type="file" name="imagenPlato" accept="image/png, image/jpeg">
+        <input type="file" name="imagenZapatilla" accept="image/png, image/jpeg">
         <p class="text-upload-image">
           Actualizar Imagen Aqui.
         </p>
@@ -88,7 +88,7 @@ if (isset($idPlato)) {
 
     <div>
       <label for="nombrePlato">Nombre zapatila</label>
-      <input class="borderMustard sizeInput marginInputs" type="text" name="nombrePlato" value="<?php echo $plato->nombrePlato; ?>">
+      <input class="borderMustard sizeInput marginInputs" type="text" name="nombrePlato" value="<?php echo $plato->nombreZapatilla; ?>">
     </div>
 
     <div>
@@ -98,7 +98,7 @@ if (isset($idPlato)) {
 
     <div>
       <label for="precioPlato">Precio venta</label>
-      <input class="borderMustard sizeInput marginInputs" type="text" name="precioPlato" value="<?php echo $plato->precioPlato; ?>">
+      <input class="borderMustard sizeInput marginInputs" type="text" name="precioPlato" value="<?php echo $plato->precioZapatilla; ?>">
     </div>
 
     <div>

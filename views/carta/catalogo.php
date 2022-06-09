@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../../controllers/platoAdapter.php';
-$productos = PlatoAdapter::listar();
+require_once __DIR__ . '/../../controllers/zapatillaAdapter.php';
+$productos = ZapatillaAdapter::listar();
 ?>
 <html lang="en">
 
@@ -141,29 +141,29 @@ $productos = PlatoAdapter::listar();
       <?php foreach ($productos as $producto) : ?>
         <div class="platos--content">
           <div class="imagen">
-            <img class="imagen-plato" src="<?php echo $producto->imagenPlato; ?>" alt="no imagen">
+            <img class="imagen-plato" src="<?php echo $producto->imagenZapatilla; ?>" alt="no imagen">
           </div>
 
           <div class="container-nombre-informacion">
             <p class="nombre-plato">
-              <?php echo ucwords($producto->nombrePlato); ?>
+              <?php echo ucwords($producto->nombreZapatilla); ?>
             </p>
           </div>
           <div class="descripcion-plato">
             <span class="descripcion--plato">
-              <?php echo ucwords($producto->descripcionPlato) ?>
+              <?php echo ucwords($producto->descripcionZapatilla) ?>
             </span>
           </div>
 
           <div class="container-precio">
             <p class="precio">
-              <?php echo "S/ " . $producto->precioPlato; ?>
+              <?php echo "S/ " . $producto->precioZapatilla; ?>
             </p>
           </div>
           <div class="boton--ordenar">
             <p class="ordenar--text">COMPRAR</p>
             <div class="shopping--cart--container">
-              <a href="/views/shopping/p-carrito-compras.php?agregar=<?php echo $producto->idPlato; ?>">
+              <a href="/views/shopping/p-carrito-compras.php?agregar=<?php echo $producto->idZapatilla; ?>">
                 <img class="shopping--cart--style" src="/assets/imagenes/carrito.png" id="addShoppingCart1">
               </a>
             </div>

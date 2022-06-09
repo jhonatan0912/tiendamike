@@ -29,7 +29,7 @@ class CarritoTools
     $existe = false;
 
     foreach ($carrito as $id => $item) {
-      if ($item['producto']->idPlato == $producto->idPlato) {
+      if ($item['producto']->idZapatilla == $producto->idZapatilla) {
         $carrito[$id]['cantidad'] = $item['cantidad'] + 1;
         $existe = true;
       }
@@ -52,7 +52,7 @@ class CarritoTools
     $carrito = CarritoTools::obtener();
 
     foreach ($carrito as $id => $item) {
-      if ($item['producto']->idPlato == $productoId) {
+      if ($item['producto']->idZapatilla == $productoId) {
         unset($carrito[$id]);
       }
     }

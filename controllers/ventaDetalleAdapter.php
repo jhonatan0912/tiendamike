@@ -27,13 +27,13 @@ class VentaDetalleAdapter
     $sql = "INSERT INTO `tiendamike`.`ventadetalle`
           (
           `idVenta`,
-          `idPlato`,
+          `idZapatilla`,
           `cantidad`,
           `precioUnitario`)
           VALUES
           (
           $ventaDetalle->idVenta,
-          $ventaDetalle->idPlato,
+          $ventaDetalle->idZapatilla,
           $ventaDetalle->cantidad,
           $ventaDetalle->precioUnitario
           );";

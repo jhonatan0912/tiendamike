@@ -11,16 +11,16 @@ class HistorialVentasAdapter
         cliente.nombres,
         cliente.apellidos,
         venta.fechaHora,
-        plato.nombrePlato,
-        plato.precioPlato
+        zapatilla.nombreZapatilla,
+        zapatilla.precioZapatilla
 
         FROM tiendamike.venta 
         inner join tiendamike.clientes as cliente
         on venta.idCliente = cliente.idCliente
         inner join tiendamike.ventadetalle as ventadetalle
         on venta.idVenta = ventadetalle.idVenta
-        inner join platos as plato
-        on ventadetalle.idPlato = plato.idPlato
+        inner join zapatilla as zapatilla
+        on ventadetalle.idZapatilla = zapatilla.idZapatilla
         WHERE fechaHora LIKE '%$date%';";
     $tabla = $db->consulta($sql);
     // echo $sql;

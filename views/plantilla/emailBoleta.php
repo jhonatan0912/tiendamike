@@ -5,7 +5,7 @@
   require_once __DIR__ . '/../../controllers/ventaAdapter.php';
   require_once __DIR__ . '/../../models/cliente.php';
   require_once __DIR__ . '/../../controllers/ventaDetalleAdapter.php';
-  require_once __DIR__ . '/../../models/plato.php';
+  require_once __DIR__ . '/../../models/zapatilla.php';
   require_once __DIR__ . '/../../tools/mailTools.php';
   $fecha = date('d-m-Y');
   $hora = date('h:i:s');
@@ -103,13 +103,13 @@
                     <?php echo $item['cantidad']; ?>
                   </td>
                   <td style="width:110px;word-wrap: break-word;word-break:break-all;">
-                    <?php echo $item['producto']->nombrePlato; ?>
+                    <?php echo $item['producto']->nombreZapatilla; ?>
                   </td>
                   <td style="width:110px;word-wrap: break-word;word-break:break-all;text-align:end;padding:0 .3em 0 0;">
-                    S/ <?php echo $item['producto']->precioPlato; ?>
+                    S/ <?php echo $item['producto']->precioZapatilla; ?>
                   </td>
                   <td style="width:110px;word-wrap: break-word;word-break:break-all;text-align:end;padding:0 .3em 0 0;">
-                    S/ <?php echo $item['producto']->precioPlato * $item['cantidad']; ?>
+                    S/ <?php echo $item['producto']->precioZapatilla * $item['cantidad']; ?>
                   </td>
                 </tr>
               <?php endforeach; ?>
@@ -122,7 +122,7 @@
             <div>
               <?php foreach ($carrito as $item) : ?>
                 <?php
-                $a = [[$item['producto']->precioPlato, $item['cantidad']]];
+                $a = [[$item['producto']->precioZapatilla, $item['cantidad']]];
                 for ($i = 0; $i < count($a); $i++) {
                   $b[] = array_product($a[$i]);
                 }
@@ -140,7 +140,7 @@
             </div>
             <div>
               <?php foreach ($carrito as $item) : ?>
-                <?php $igv = [(($item['producto']->precioPlato * $item['cantidad']) + (($item['cantidad'] * $item['producto']->precioPlato) * 0.18))];
+                <?php $igv = [(($item['producto']->precioZapatilla * $item['cantidad']) + (($item['cantidad'] * $item['producto']->precioZapatilla) * 0.18))];
                 echo array_sum($igv); ?>
               <?php endforeach; ?>
             </div>

@@ -1,18 +1,18 @@
     <?php
     require_once __DIR__ . '/../models/coneccion.php';
-    require_once __DIR__ . '/../models/plato.php';
+    require_once __DIR__ . '/../models/zapatilla.php';
 
-    class PlatoAdapter
+    class ZapatillaAdapter
     {
         static function listar()
         {
             $db = new ConeccionProyectoModular();
-            $sql = "SELECT * FROM tiendamike.platos;";
+            $sql = "SELECT * FROM tiendamike.zapatilla;";
             $tabla = $db->consulta($sql);
             $db->cerrar();
             $platos = [];
             foreach ($tabla as $fila) {
-                $platos[] = Plato::desdeFila($fila);
+                $platos[] = Zapatilla::desdeFila($fila);
             }
             return $platos;
         }
@@ -24,32 +24,32 @@
             $db = new ConeccionProyectoModular();
             $sql = "SELECT 
             idVariedad,
-            idPlato,
-            imagenPlato,
-            nombrePlato,
-            descripcionPlato,
-            precioPlato
-            FROM tiendamike.platos 
+            idZapatilla,
+            imagenZapatilla,
+            nombreZapatilla,
+            descripcionZapatilla,
+            precioZapatilla
+            FROM tiendamike.zapatilla 
             WHERE idVariedad=$idVariedad;";
             $tabla = $db->consulta($sql);
             $db->cerrar();
             $platos = [];
             foreach ($tabla as $fila) {
-                $platos[] = Plato::desdeFila($fila);
+                $platos[] = Zapatilla::desdeFila($fila);
             }
             return $platos;
         }
         /**
          * Funcion para obtener un plato por id
          */
-        static function obtenerUno($idPlato)
+        static function obtenerUno($idZapatilla)
         {
             $db = new ConeccionProyectoModular();
-            $sql = "SELECT * FROM tiendamike.platos
-                     WHERE idPlato=$idPlato";
+            $sql = "SELECT * FROM tiendamike.zapatilla
+                     WHERE idZapatilla=$idZapatilla";
             $tabla = $db->consulta($sql);
             if (count($tabla) > 0) {
-                return Plato::desdeFila($tabla[0]);
+                return Zapatilla::desdeFila($tabla[0]);
             } else {
                 return NULL;
             }
@@ -57,21 +57,21 @@
         /**
          * Funcion para registrar plato
          */
-        static function crearPlato($plato)
+        static function crearZapatilla($plato)
         {
             $db = new ConeccionProyectoModular();
-            $sql = "INSERT INTO `tiendamike`.`platos`
+            $sql = "INSERT INTO tiendamike.zapatilla
                 (`idVariedad`,
-                `imagenPlato`,
-                `nombrePlato`,
-                `descripcionPlato`,
-                `precioPlato`) 
+                `imagenZapatilla`,
+                `nombreZapatilla`,
+                `descripcionZapatilla`,
+                `precioZapatilla`) 
                 VALUES 
                 ($plato->idVariedad,
-                '$plato->imagenPlato', 
-                '$plato->nombrePlato', 
-                '$plato->descripcionPlato',
-                '$plato->precioPlato');
+                '$plato->imagenZapatilla', 
+                '$plato->nombreZapatilla', 
+                '$plato->descripcionZapatilla',
+                '$plato->precioZapatilla');
                 ";
             $id = $db->insert($sql);
             // echo $id;
@@ -81,16 +81,16 @@
         /**
          * Funcion para actualizar datos del plato
          */
-        static function actualizarPlato($plato)
+        static function actualizarZapatilla($plato)
         {
             $db = new ConeccionProyectoModular();
-            $sql = "UPDATE `tiendamike`.`platos`
+            $sql = "UPDATE tiendamike.zapatilla
                     SET
                     `idVariedad` = $plato->idVariedad,
-                    `imagenPlato`='$plato->imagenPlato',
-                    `nombrePlato` = '$plato->nombrePlato',
-                    `precioPlato`='$plato->precioPlato'
-                    WHERE `idPlato` = $plato->idPlato;
+                    `imagenZapatilla`='$plato->imagenZapatilla',
+                    `nombreZapatilla` = '$plato->nombreZapatilla',
+                    `precioZapatilla`='$plato->precioZapatilla'
+                    WHERE `idZapatilla` = $plato->idZapatilla;
                     ";
             // echo $sql;
             $esCorrecto = $db->actualizar($sql);
@@ -100,11 +100,11 @@
         /**
          * Funcion para eliminar plato
          */
-        static function eliminar($idPlato)
+        static function eliminar($idZapatilla)
         {
             $db = new ConeccionProyectoModular();
-            $sql = "DELETE  FROM `tiendamike`.`platos`
-                    WHERE idPlato=$idPlato;";
+            $sql = "DELETE  FROM tiendamike.zapatilla
+                    WHERE idZapatilla=$idZapatilla;";
             $respuesta = $db->eliminar($sql);
             return $respuesta;
         }
@@ -114,7 +114,7 @@
         static function getNumberOfProducts()
         {
             $db = new ConeccionProyectoModular();
-            $sql = "SELECT * FROM tiendamike.platos;";
+            $sql = "SELECT * FROM tiendamike.zapatilla;";
             $numberProducts = $db->getNumberData($sql);
             return $numberProducts;
         }

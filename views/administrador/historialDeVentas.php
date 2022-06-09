@@ -53,10 +53,10 @@ $historiales = HistorialVentasAdapter::historialByDate($date);
           <?php echo $historial->fechaHora ?>
         </td>
         <td>
-          <?php echo $historial->nombrePlato ?>
+          <?php echo $historial->nombreZapatilla ?>
         </td>
         <td>
-          <?php echo $historial->precioPlato ?>
+          <?php echo $historial->precioZapatilla ?>
         </td>
       </tr>
     <?php endforeach; ?>

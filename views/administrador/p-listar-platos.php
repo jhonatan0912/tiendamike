@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../controllers/platoAdapter.php';
+require_once __DIR__ . '/../../controllers/zapatillaAdapter.php';
 require_once __DIR__ . '/../../controllers/personalAdapter.php';
 require_once __DIR__ . '/../../tools/httpTools.php';
 
@@ -9,7 +9,7 @@ $perfilPersonal;
 if (isset($_SESSION['personal'])) {
     $perfilPersonal = $_SESSION['personal'];
     $logeado = TRUE;
-    $platos = PlatoAdapter::listar();
+    $platos = ZapatillaAdapter::listar();
 } else {
     HttpTools::redireccionar('/errores/p403.php');
 }
@@ -39,11 +39,11 @@ if (isset($_SESSION['personal'])) {
         <?php foreach ($platos as $plato) : ?>
 
             <div class="platos--content">
-                <img class="imagen--plato" src="<?php echo $plato->imagenPlato; ?>" alt="NO HAY IMAGEN">
+                <img class="imagen--plato" src="<?php echo $plato->imagenZapatilla; ?>" alt="NO HAY IMAGEN">
 
                 <div class="nombre--plato">
                     <p class="name--content">
-                        <?php echo ucwords($plato->nombrePlato); ?>
+                        <?php echo ucwords($plato->nombreZapatilla); ?>
                     </p>
                 </div>
 
@@ -56,16 +56,16 @@ if (isset($_SESSION['personal'])) {
 
                 <div class="precio--container">
                     <p class="precio--mount">
-                        <?php echo "S/" . ucwords($plato->precioPlato); ?>
+                        <?php echo "S/" . ucwords($plato->precioZapatilla); ?>
                     </p>
                 </div>
                 <div class="editar">
-                    <a href="/views/administrador/p-actualizar-plato.php?idPlato=<?php echo $plato->idPlato; ?>">
+                    <a href="/views/administrador/p-actualizar-zapatilla.php?idPlato=<?php echo $plato->idZapatilla; ?>">
                         EDITAR
                     </a>
                 </div>
                 <div class="eliminar">
-                    <a href="/views/administrador/p-eliminar-plato.php?idPlato=<?php echo $plato->idPlato; ?>">
+                    <a href="/views/administrador/p-eliminar-zapatilla.php?idPlato=<?php echo $plato->idZapatilla; ?>">
                         ELIMINAR
                     </a>
                 </div>

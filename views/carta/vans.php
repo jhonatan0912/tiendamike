@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/../../controllers/platoAdapter.php';
+require_once __DIR__ . '/../../controllers/zapatillaAdapter.php';
 
-$platos = PlatoAdapter::listarPorIdVariedad(7);
+$platos = ZapatillaAdapter::listarPorIdVariedad(7);
 
 ?>
 <html lang="es-pe">
@@ -35,25 +35,25 @@ $platos = PlatoAdapter::listarPorIdVariedad(7);
         <div class="platos--content">
 
           <div class="imagen">
-            <img class="imagen-plato" src="<?php echo $plato->imagenPlato; ?>" alt="no imagen">
+            <img class="imagen-plato" src="<?php echo $plato->imagenZapatilla; ?>" alt="no imagen">
           </div>
 
           <div class="container-nombre-informacion">
             <p class="nombre-plato">
-              <?php echo ucwords($plato->nombrePlato); ?>
+              <?php echo ucwords($plato->nombreZapatilla); ?>
             </p>
           </div>
 
           <div class="container-precio">
             <p class="precio">
-              <?php echo "S/ " . $plato->precioPlato; ?>
+              <?php echo "S/ " . $plato->precioZapatilla; ?>
             </p>
           </div>
 
           <div class="boton--ordenar">
             <p class="ordenar--text">COMPRAR</p>
             <div class="shopping--cart--container">
-              <a href="/views/shopping/p-carrito-compras.php?agregar=<?php echo $plato->idPlato; ?>">
+              <a href="/views/shopping/p-carrito-compras.php?agregar=<?php echo $plato->idZapatilla; ?>">
                 <img class="shopping--cart--style" src="/assets/imagenes/carrito.png" id="addShoppingCart1">
               </a>
             </div>
