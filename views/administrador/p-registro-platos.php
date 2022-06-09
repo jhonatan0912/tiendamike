@@ -122,43 +122,44 @@ if (
 			</div>
 		</div>
 		<!-- FIN CONTAINER PANEL ADMINISTRADOR -->
-		<form class="form-register-plato" action="p-registro-platos.php" method="POST" enctype="multipart/form-data">
+		<div class="container_mid">
+			<form class="form-register-plato" action="p-registro-platos.php" method="POST" enctype="multipart/form-data">
 
 
-			<div class="upload-image-container">
-				<input type="file" name="imagenPlato" accept="image/png, image/jpeg">
-			</div>
+				<div class="upload-image-container">
+					<input type="file" name="imagenPlato" accept="image/png, image/jpeg">
+				</div>
 
-			<br>
+				<br>
 
-			<select class="borderMustard sizeInput marginInputs" name="idVariedad">
-				<?php foreach ($variedades as $variedad) : ?>
+				<select class="borderMustard sizeInput marginInputs" name="idVariedad">
+					<?php foreach ($variedades as $variedad) : ?>
 
-					<option value="<?php echo $variedad->idVariedad; ?>">
-						<?php echo strtoupper($variedad->nombreVariedad); ?>
-					</option>
+						<option value="<?php echo $variedad->idVariedad; ?>">
+							<?php echo strtoupper($variedad->nombreVariedad); ?>
+						</option>
 
-				<?php endforeach; ?>
-			</select>
+					<?php endforeach; ?>
+				</select>
 
-			<br>
+				<br>
 
-			<input class="borderMustard sizeInput marginInputs" type="text" name="nombrePlato" placeholder="Inserte nombre">
-			<br>
-			<!-- <input class="borderMustard sizeInput marginInputs" type="text" name="descripcionPlato" placeholder="Inserte  categoria"> -->
-			<select name="descripcionPlato" class=" borderMustard sizeInput marginInputs">
-				<option value="hombre">Hombre</option>
-				<option value="dama">Dama</option>
-				<option value="niños">Niños</option>
-			</select>
-			<br>
-			<input class="borderMustard sizeInput marginInputs" type="text" name="precioPlato" maxlength="9" placeholder="S/ ">
+				<input class="borderMustard sizeInput marginInputs" type="text" name="nombrePlato" placeholder="Inserte nombre">
+				<br>
+				<!-- <input class="borderMustard sizeInput marginInputs" type="text" name="descripcionPlato" placeholder="Inserte  categoria"> -->
+				<select name="descripcionPlato" class=" borderMustard sizeInput marginInputs">
+					<option value="hombre">Hombre</option>
+					<option value="dama">Dama</option>
+					<option value="niños">Niños</option>
+				</select>
+				<br>
+				<input class="borderMustard sizeInput marginInputs" type="text" name="precioPlato" maxlength="9" placeholder="S/ ">
 
-			<div class="boton-submit">
-				<input type="submit" value="REGISTRAR" name="enviar">
-			</div>
-		</form>
-
+				<div class="boton-submit">
+					<input type="submit" value="REGISTRAR" name="enviar">
+				</div>
+			</form>
+		</div>
 	</div>
 </body>
 
