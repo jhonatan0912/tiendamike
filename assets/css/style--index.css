@@ -1,33 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
+a{
+	text-decoration: none;
+}
 body{
-background: #FFFAF4;
-font-family: 'Akaya Telivigala', cursive;
+background: #f4f4f4;
+	font-family: 'Nunito',sans-serif;
+	overflow-x: hidden;
 }
 
 .container{
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
 }
 
 .main-high{
+    display: flex;
+    justify-content: space-between;
+    height: 140px;
+    padding: 0 1.5em;
+    box-shadow: 0 0 10px;
+		    background: #dadada;
+}
+.varietys{
+	width: 25%;
 	display: flex;
-	justify-content:space-between;
-	height: 140px;
-	box-shadow: 0 0 4px;
+	justify-content:space-around;
+	align-items: center;
 }
 
 .main-high__logo-title{
-	width: 620px;
+	/* width: 450px; */
 	display: flex;
 	align-items: center;
 	font-size: 2.9em;
@@ -40,7 +49,7 @@ font-family: 'Akaya Telivigala', cursive;
 
 .main-high__options{
 	font-size: 1.6em;
-	width: 350px;
+	width: 190px;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -49,12 +58,31 @@ font-family: 'Akaya Telivigala', cursive;
 .main-high__hyperlink{
 	text-decoration: none;
 	color: #000;
+	font-size: 1.5em;
 }
 
 .main-high__hyperlink:hover{
 	color: rgb(117, 117, 117);
 }
-
+.cantidad-productos{
+	background-color:#000000;	
+	border: 1px solid #686666;
+	box-shadow: 0 0 5px #888888;
+	display: inline-block;
+	width: .9em;
+	height: .9em;
+	border-radius: 100%;
+	text-align: center;
+	line-height:14px;
+	color: #fff;
+	font-size: 18px;
+	margin: 25px 0 0 0;
+}
+.carrito{
+	width: 40px;
+	height: 40px;
+	float: right;
+}
 .img-login{
 	width: 50px;
 }
@@ -99,19 +127,19 @@ iframe{
 }
 
 .mid{
-	display: flex;
-	justify-content: space-around;
-	margin-top: 100px;
+display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 footer{
 	text-align: center;
-	background-color: #7E0001;
+	background-color: #000000;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-font-family: 'Varela Round', sans-serif;
+	font-family: 'Varela Round', sans-serif;
 }
 
 #footer--words{
@@ -138,121 +166,34 @@ p{
 }
 
 .manage{
-	float: right;
+	text-align: center;
 	padding: 2em 10px 2em 0;
 }
 
-/* MEDIA QUERIES */
-
-/* 1328px */
-@media only screen and (max-width: 	83em){
-	/* body{
-		background-color: skyblue;
-	} */
+.marquee{
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
 }
-/* 1024px */
-@media only screen and (max-width: 	64em){
-	/* body{
-		background-color: purple;
-	} */
-	#titulo-main{
-		text-align: center;
-	}
-	.mid{
-		width: 100%;
-	}
-	#localimg{
-		width: 100%;
-	}
-	iframe{
-		width: 95%;
-	}
+.marquee.center{
+text-align: center;
+    font-size: 1.9em;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+		margin-top: 20px;
 }
-/* 960px */
-@media only screen and (max-width: 	60em){
-	/* body{
-		background-color: yellow;
-	} */
-	#titulo-main{
-		text-align: center;
-	}
-	.mid{
-		width: 100%;
-		display: flex;
-	}
-	#localimg{
-		width: 100%;
-	}
-	iframe{
-		width: 100%;
-	}
+.images-index-container{
+	display: flex;
+	flex-direction: column;
 }
-/* 768px */
-@media only screen and (max-width: 	47.5em){
-	body{
-		font-size: 50%;
-	}
-	.logoid{
-		width: 130px;
-		height: 130px;
-	}
-	#globo1{
-		width: 80px;
-		height: 150px;
-	}
-	#globo2{
-		width: 80px;
-		height: 150px;
-	}
-	#titulo-main{
-		font-size: 1em;
-		text-align: center;
-	}
-	.opciones--nav{
-		border-radius: 8px;
-		/* width: 100%; */
-		/* float: none; */
-		display: flex;
-		justify-content: space-around;
-		line-height: 20px;
-		height: auto;
-		text-align: center;
-	}
-	.opciones--nav > a{
-		display:block;
-	}
-	.options{
-		border: none;
-	}
-	.mid{
-		margin: 2em 0;
-		display: flex;
-		flex-direction: column;
-	}
-	.options:hover{
-	border-bottom: none;
-	}
-	iframe{
-		align-items: stretch;
-		width: 100%;
-	}
-	footer{
-		position: relative;
-		bottom: 0;
-		left: 0;
-	}
-
+.marquee-description > p{
+text-align: center;
 }
-
-/* 480px */
-@media only screen and (max-width: 	30em){
-	/* body{
-		background-color: red;
-	} */
-}
-/* 320px */
-@media only screen and (max-width: 	20em){
-	/* body{
-		background-color: blue;
-	} */
+.background-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 40px;
 }

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
 * {
 	margin: 0;
@@ -7,16 +6,17 @@
 
 }
 body{
-	font-family: 'Akaya Telivigala', cursive;
+	font-family: 'Nunito',sans-serif;
 	overflow-x: hidden;
+	background-color: #fff;
 }
 /* NAVBAR */
 .main-high{
     display: flex;
     width: 100vw;
-    /* background-color: green; */
-    box-shadow: 0 0 4px;
 		height: 134px;
+		box-shadow: 0 0 5px;
+		background: #dadada;
 }
 
 .main-high__logo{
@@ -37,7 +37,7 @@ body{
 
 /* END NAVBAR */
 .cantidad-productos{
-	background-color:#C92D39;
+	background-color:#000000;
 	border: 1px solid #686666;
 	box-shadow: 0 0 5px #888888;
 	display: inline-block;
@@ -59,10 +59,9 @@ body{
 .option--variedad{
 	width: 240px;
 	height: 30px;
-	background-color:#C92D39;
+	background-color:#242424;
 	text-align: center;
-	margin: 3px 3px;
-	border-radius: 6px;
+	border: 1px solid #fff;
 }
 .title--variedades{
 	color: #fff;
@@ -84,9 +83,9 @@ body{
 .platos--content{
 	width: 300px;
   height: 400px;
-  box-shadow: 5px 10px 18px #888888;
-  border-radius: 20px;
+	border: 1px solid #000;
   margin: 0 43px;
+	border-radius: 5px;
 }
 .container-nombre-informacion{
 	height: 60px;
@@ -102,17 +101,15 @@ body{
 	margin: auto;
 }
 .precio{
-	color: #C92D39;
+	color: #050505;
   font-size: 30px;
   padding: 0 80px;
-  text-shadow: 0.6px 0.6px #000, -0.6px -0.6px #000;
 }
 .boton--ordenar{
-	background-color: #C92D39;
+	background-color: #0e0e0e;
   display: flex;
   width: 200px;
   height: 50px;
-  border-radius: 20px;
   justify-content: space-evenly;
   margin-left: 15%;
   margin-top: 20px;
@@ -125,23 +122,23 @@ body{
 }
 .shopping--cart--style{
 	margin: 9px 0;
+	filter: invert(1);
 }
 .shopping--cart--container{
-	background: #C92D39;
-	border-radius:50%;
+	/* background: #ffffff; */
+	/* border-radius:50%; */
 	height: 46px;
 	width: 46px;
 	text-align: center;
 	align-content: center;
 	margin: 2px 0;
-
 }
 .shopping--cart--container:hover{
-	background-color: #ffd97a;
+	background-color: #000;
 }
 
 /* ESTILOS SCROLLBAR */
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
 	width: 10px;
 	background-color: #C92D39;
 	border-radius: 2px;
@@ -152,7 +149,7 @@ body{
 }
 ::-webkit-scrollbar-thumb:hover{
 	background: linear-gradient(360deg, rgba(252,196,56,1) 37%, rgba(201,45,57,1) 100%);
-}
+} */
 
 
 
@@ -169,8 +166,6 @@ body{
 }
 .imagen-plato{
 	width: 100%;
-	border-top-left-radius: 10px ;
-	border-top-right-radius: 10px ;
 	height: 180px;
 	text-align: center;
 	object-fit: contain;

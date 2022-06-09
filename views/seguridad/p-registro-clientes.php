@@ -27,7 +27,7 @@ if (isset($_POST['registrarCliente'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>REGISTRO CLIENTES</title>
 	<link rel="stylesheet" href="../../assets/css/style--registro--clientes.css">
-	<link rel="icon" href="/assets/imagenes/logochifa.png">
+	<link rel="icon" href="/assets/imagenes/logoTienda.png">
 </head>
 
 <body>
@@ -35,12 +35,16 @@ if (isset($_POST['registrarCliente'])) {
 		<h1>REGISTRARSE</h1>
 	</center>
 	<div class="container--mid">
-		<div>
-			<img src="/assets/imagenes/imagen--registro.png">
-		</div>
 
 		<form action="p-registro-clientes.php" method="POST">
 			<table class="tabla">
+				<div class="already-registered">
+					<a href="/views/seguridad/p-login-clientes.php">
+						¿YA ERES USUARIO? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						INICIA SESIÓN
+					</a>
+
+				</div>
 				<tr>
 					<td>NOMBRES:</td>
 				</tr>
@@ -80,19 +84,8 @@ if (isset($_POST['registrarCliente'])) {
 						<input type="submit" name="registrarCliente" value="PROCESAR">
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<a style="color:#fff; text-decoration:none;" href="/views/seguridad/p-login-clientes.php">
-							Ya tienes una cuenta?<br>Ingresa aqui
-						</a>
-					</td>
-				</tr>
 			</table>
 		</form>
-
-		<div>
-			<img src="/assets/imagenes/imagen--registro.png">
-		</div>
 	</div>
 
 

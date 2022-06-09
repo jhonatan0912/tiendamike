@@ -10,12 +10,12 @@ class ClienteAdapter
     static function validarDatos($correo, $password)
     {
         $hash = hash('sha512', $password);
-        $sql = "SELECT idCliente FROM proyecto_modular.clientes
+        $sql = "SELECT idCliente FROM tiendamike.clientes
                 WHERE correo ='$correo'
                 AND password ='$hash'
                 ";
         $db = new ConeccionProyectoModular();
-        echo $sql;
+        // echo $sql;
         $tabla = $db->consulta($sql);
         $db->cerrar();
         if (count($tabla) > 0) {
@@ -35,7 +35,7 @@ class ClienteAdapter
         } else {
             $hash = hash('sha512', $password);
 
-            $sql = "INSERT INTO `proyecto_modular`.`clientes`
+            $sql = "INSERT INTO `tiendamike`.`clientes`
                      (`nombres`, `apellidos`, `correo`, `password`) 
                     VALUES ('$nombres', '$apellidos', '$correo', '$hash');";
 
@@ -53,7 +53,7 @@ class ClienteAdapter
                         nombres,
                         apellidos,
                         correo
-        FROM proyecto_modular.clientes
+        FROM tiendamike.clientes
         WHERE idCliente=$id";
         $tabla = $db->consulta($sql);
         if (count($tabla) > 0) {
@@ -71,7 +71,7 @@ class ClienteAdapter
                         nombres,
                         apellidos,
                         correo
-        FROM proyecto_modular.clientes
+        FROM tiendamike.clientes
         WHERE correo='$correo'";
         $tabla = $db->consulta($sql);
         if (count($tabla) > 0) {
@@ -85,7 +85,7 @@ class ClienteAdapter
     static function getNumberOfClients()
     {
         $db = new ConeccionProyectoModular();
-        $sql = "SELECT * FROM proyecto_modular.clientes;";
+        $sql = "SELECT * FROM tiendamike.clientes;";
         $numberClients = $db->getNumberData($sql);
         return $numberClients;
     }
@@ -94,7 +94,7 @@ class ClienteAdapter
     {
         $db = new ConeccionProyectoModular();
         $hash = hash('sha512', $password);
-        $sql = "UPDATE proyecto_modular.clientes
+        $sql = "UPDATE tiendamike.clientes
         SET password = '$hash'
         WHERE correo='$correo';    
         ";

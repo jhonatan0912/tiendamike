@@ -51,9 +51,9 @@ if (
 			$plato->imagenPlato = $path;
 			PlatoAdapter::actualizarPlato($plato);
 		}
-		echo "<h1 style='background-color:#CB0620;'>REGISTRADO CORRECTAMENTE</h1>";
+		echo "<h1 style='background-color:#000;color:#fff;text-align:center;'>REGISTRADO CORRECTAMENTE</h1>";
 	} else {
-		echo "no se pudo crear";
+		echo "<h1 style='background-color:#000;color:#fff;text-align:center;'>NO SE PUDO REGISTRAR LA ZAPATILLA</h1>";
 	}
 }
 
@@ -65,21 +65,21 @@ if (
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="/assets/css/style--index--administrador.css">
-	<link rel="shortcut icon" href="/assets/imagenes/logochifa.png" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/imagenes/logoTienda.png" type="image/x-icon">
+	<script src="https://kit.fontawesome.com/a413ea44fb.js" crossorigin="anonymous"></script>
 	<title>REGISTRO PLATOS</title>
 </head>
 
 <body>
 	<!-- CONTAINER LOGO Y TITULO -->
+	<a style="color: #000;font-size:1.9em" href="/views/administrador/index.php"> <i class="fas fa-angle-double-left"></i></a>
 	<div class="container-logo-title">
 		<div class="container-logo">
-			<a href="/views/administrador/index.php">
-				<img class="img-logo" src="/assets/imagenes/logochifa.png">
-			</a>
+
 		</div>
 		<div class="container-title">
-			<h1 class="title-page fontColorWhite">
-				REGISTRO DE PLATOS
+			<h1 class="title-page">
+				REGISTRO DE ZAPATILLAS
 			</h1>
 		</div>
 	</div>
@@ -89,6 +89,23 @@ if (
 		<!-- CONTAINER PANEL ADMINISTRADOR -->
 		<div class="options-administrator">
 			<div class="container-dni-administrator fontColorWhite fontSize">
+				<div class="option-three marginOptions">
+					<a href="/views/administrador/p-listar-platos.php" class="fontColorWhite shadowText fontSize">
+						GESTIÓN DE ZAPATILLAS
+					</a>
+				</div>
+				<div class="option-one marginOptions">
+					<a href="/views/administrador/p-registro-platos.php" class="fontColorWhite shadowText fontSize">
+						REGISTRO DE ZAPATILLAS
+					</a>
+				</div>
+				<div class="option-one marginOptions">
+					<a href="/views/administrador/imagenesIndex.php" class="fontColorWhite shadowText fontSize">
+						PRODUCTOS NUEVOS PAGINA PRINCIPAl
+					</a>
+				</div>
+			</div>
+			<div>
 				<?php if ($logeado) : ?>
 					DNI: <?php echo $perfilPersonal->dni; ?>
 					<div class="salir">
@@ -102,16 +119,6 @@ if (
 						error
 					</div>
 				<?php endif; ?>
-			</div>
-			<div class="option-three marginOptions">
-				<a href="/views/administrador/p-listar-platos.php" class="fontColorWhite shadowText fontSize">
-					ADMINISTRAR PLATOS
-				</a>
-			</div>
-			<div class="option-one marginOptions">
-				<a href="/views/administrador/p-registro-platos.php" class="fontColorWhite shadowText fontSize">
-					REGISTRO DE PLATOS
-				</a>
 			</div>
 		</div>
 		<!-- FIN CONTAINER PANEL ADMINISTRADOR -->
@@ -136,9 +143,14 @@ if (
 
 			<br>
 
-			<input class="borderMustard sizeInput marginInputs" type="text" name="nombrePlato" placeholder="Inserte nombre plato">
+			<input class="borderMustard sizeInput marginInputs" type="text" name="nombrePlato" placeholder="Inserte nombre">
 			<br>
-			<input class="borderMustard sizeInput marginInputs" type="text" name="descripcionPlato" placeholder="Inserte descripcion">
+			<!-- <input class="borderMustard sizeInput marginInputs" type="text" name="descripcionPlato" placeholder="Inserte  categoria"> -->
+			<select name="descripcionPlato" class=" borderMustard sizeInput marginInputs">
+				<option value="hombre">Hombre</option>
+				<option value="dama">Dama</option>
+				<option value="niños">Niños</option>
+			</select>
 			<br>
 			<input class="borderMustard sizeInput marginInputs" type="text" name="precioPlato" maxlength="9" placeholder="S/ ">
 

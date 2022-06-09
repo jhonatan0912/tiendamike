@@ -41,7 +41,7 @@ foreach ($carrito as $item) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style--carrito--compras.css">
-    <link rel="shortcut icon" href="/assets/imagenes/logochifa.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/imagenes/logoTienda.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/a413ea44fb.js" crossorigin="anonymous"></script>
     <title>Carrito de compras</title>
 </head>
@@ -50,22 +50,22 @@ foreach ($carrito as $item) {
     <div class="nav--high">
         <div class="logo">
             <?php if ($carrito == null) : ?>
-                <a href="/views/carta/p-menu-variedades.php">
-                    <img class="logoImg" src="/assets/imagenes/logochifa.png">
+                <a class="hyperlink__logo" href="/views/carta/marcas.php">
+                    Calzados Mike
                 </a>
             <?php else : ?>
-                <a href="<?= $_SERVER["HTTP_REFERER"] ?>">
-                    <img class="logoImg" src="/assets/imagenes/logochifa.png">
+                <a class="hyperlink__logo" href="<?= $_SERVER["HTTP_REFERER"] ?>">
+                    Calzados Mike
                 </a>
             <?php endif; ?>
         </div>
 
         <div class="container-title-page">
-            <h1 class="title-shopping-cart">CARRITO DE COMPRAS</h1>
+            <h1 class="title-shopping-cart">CARRITO</h1>
         </div>
     </div>
     <div class="order-p">
-        PEDIDO
+        Productos
     </div>
     <!-- lista de productos del carrito de compras -->
     <div class="products-container">
@@ -83,13 +83,6 @@ foreach ($carrito as $item) {
                             </strong>
                         </td>
                         <!-- descripcion producto -->
-                        <td>
-                            <strong>Descripcion:</strong>
-                            <br>
-                            <small>
-                                <?php echo ucwords($item['producto']->descripcionPlato); ?>
-                            </small>
-                        </td>
                         <!-- precio producto -->
                         <td>
                             S/<?php echo $item['producto']->precioPlato; ?>
@@ -101,7 +94,7 @@ foreach ($carrito as $item) {
                         <!-- boton eliminar producto del carrito de compras  -->
                         <td>
                             <a href="/views/shopping/p-carrito-compras.php?eliminar=<?php echo $item['producto']->idPlato; ?>">
-                                <img class="delete-img" src="/assets/imagenes/delete.png">
+                                <i class="fas fa-times-circle"></i>
                             </a>
                         </td>
                     </tr>
@@ -116,7 +109,7 @@ foreach ($carrito as $item) {
                 </div>
                 <div class="btn-continuar">
                     <a href="/views/shopping/checkout.php">
-                        Continuar compra
+                        Procesar pedido
                     </a>
                 </div>
             </div>

@@ -12,7 +12,7 @@ class PersonalAdapter
 	{
 		$hash	= hash('sha512', $personal->password);
 		$db = new ConeccionProyectoModular();
-		$sql = "INSERT INTO `proyecto_modular`.`personal`
+		$sql = "INSERT INTO `tiendamike`.`personal`
 		(`dni`,
 		`password`)
 		VALUES
@@ -29,12 +29,13 @@ class PersonalAdapter
 	{
 		$hash = hash('sha512', $password);
 		$sql = "SELECT idPersonal
-		 FROM proyecto_modular.personal
-		 WHERE dni=$dni 
+		 FROM tiendamike.personal
+		 WHERE dni='$dni' 
 		 AND
 		 password ='$hash';
 		";
 		$db = new ConeccionProyectoModular();
+		echo $sql;
 		$tabla = $db->consulta($sql);
 		$db->cerrar();
 		if (count($tabla) > 0) {
@@ -49,7 +50,7 @@ class PersonalAdapter
 	static function perfilPersonal($id)
 	{
 		$sql = "SELECT idPersonal,dni
-		 	FROM proyecto_modular.personal
+		 	FROM tiendamike.personal
 			 WHERE idPersonal=$id;";
 		// echo $sql;
 		$db = new ConeccionProyectoModular();
@@ -66,7 +67,7 @@ class PersonalAdapter
 	static function getNumberOfStaff()
 	{
 		$db = new ConeccionProyectoModular();
-		$sql = "SELECT * FROM proyecto_modular.personal;";
+		$sql = "SELECT * FROM tiendamike.personal;";
 		$numberOfStaff = $db->getNumberData($sql);
 		return $numberOfStaff;
 	}

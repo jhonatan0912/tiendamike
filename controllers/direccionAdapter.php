@@ -7,7 +7,7 @@ class DireccionAdapter
   static function crear($direccion)
   {
     $db = new ConeccionProyectoModular();
-    $sql = "INSERT INTO `proyecto_modular`.`direccion`
+    $sql = "INSERT INTO `tiendamike`.`direccion`
           (
           `idCliente`,
           `direccion`)
@@ -25,7 +25,7 @@ class DireccionAdapter
     $db = new ConeccionProyectoModular();
     $sql = "SELECT 
     * 
-    FROM proyecto_modular.direccion
+    FROM tiendamike.direccion
     WHERE idCliente=$idCliente;";
     $tabla = $db->consulta($sql);
     // echo $sql;

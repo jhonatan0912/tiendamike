@@ -7,16 +7,11 @@ require_once __DIR__ . '/../../controllers/ventaDetalleAdapter.php';
 require_once __DIR__ . '/../../models/plato.php';
 require_once __DIR__ . '/../../tools/mailTools.php';
 require_once __DIR__ . '/../../controllers/direccionAdapter.php';
-
 date_default_timezone_set('America/Lima');
-// error_reporting(0);
 $direccion = $_POST['direccion'];
 $carrito = CarritoTools::obtener();
 $cliente = HttpTools::getCliente();
 $celular = $_POST['celular'];
-$idComprobante = $_POST['idComprobante'];
-$indicaciones = $_POST['indicaciones'];
-$numeroDocumento = $_POST['numeroDocumento'];
 $fechaHora = date('Y-m-d h:i:s', time());
 //*  VARIABLES PARA FECHA Y HORA
 $fecha = date('d-m-Y');
@@ -24,7 +19,7 @@ $fecha = date('d-m-Y');
 $hora = date('h:i:s');
 //?echo $hora;
 //*
-$venta = new Venta($cliente->idCliente, 0, $celular, $indicaciones, $direccion, $fechaHora, $idComprobante, $numeroDocumento);
+$venta = new Venta($cliente->idCliente, 0, $celular, '', $direccion, $fechaHora, 1, "12345678");
 $idVenta = VentaAdapter::crear($venta);
 $direccionListar = DireccionAdapter::listar($cliente->idCliente);
 foreach ($carrito as $item) {
@@ -44,7 +39,7 @@ ob_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="/assets/imagenes/logochifa.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/assets/imagenes/logoTienda.png" type="image/x-icon">
   <title>Comprobante</title>
 </head>
 
@@ -66,33 +61,23 @@ ob_start();
                                               padding:6px'>
         <div class='content-comprobante' style='margin: 10px auto;width: 90%;'>
           <div class='name-empresa' style='padding:6px;text-align:center;font-size:24px;color:#000;'>
-            Palacio Chino Premium
+            Calzados Mike
           </div>
-          <div class='location align fz1' style='padding:6px;
-                                              text-align:center;
-                                              font-size:18px;
-                                              color:#000;'>
-            Uruguay 908, Huancayo
-          </div>
-          <hr style='border: 1px dashed #000;'>
+          <hr style='border: 1px solid #000;'>
           <div class='ruc-empresa align fz2' style='padding:6px;
                                                   font-size:18px;
                                                   text-align:center;
                                                   color:#000;'>
-            RUC: 10424068786
+            RUC: 10453676183
           </div>
-          <hr style='border: 1px dashed #000;'>
+          <hr style='border: 1px solid #000;'>
           <div style='padding:6px; font-size:18px; text-align:center;'>
-            <?php if ($idComprobante == 1) : ?>
-              Boleta De Venta Electronica
-            <?php elseif ($idComprobante == 2) : ?>
-              Factura Electrónica
-            <?php endif; ?>
+            Boleta Electrónica
             <div class='numero-comprobante' style='padding:6px'>
               N° <?php echo $idVenta; ?>
             </div>
           </div>
-          <hr style='border: 1px dashed #000;'>
+          <hr style='border: 1px solid #000;'>
           <div class='marginTop10px' style='padding:6px;color:#000;'>
             Fecha de emisión:
             <div class='fecha-emision-comprobante inline' style='padding:6px;
@@ -113,25 +98,13 @@ ob_start();
               <?php echo ucwords($cliente->nombres) . 'ㅤ' . ucwords($cliente->apellidos); ?>
             </div>
           </div>
-          <div class='documento marginTop10px' style='padding:6px;color:#000;'>
-            <?php if ($idComprobante == 1) : ?>
-              DNI:
-            <?php elseif ($idComprobante == 2) : ?>
-              RUC:
-            <?php endif; ?>
-            <div class='dni inline' style='padding:6px;display:inline-block;color:#000;'>
-              <?php echo $numeroDocumento; ?>
-            </div>
-          </div>
           <div class='direction marginTop10px' style='padding:6px;color:#000;'>
             Dirección:
             <div class='direction-client inline' style='padding:6px;display:inline-block;color:#000;'>
-              <?php foreach ($direccionListar as $direccion) : ?>
-                <?php echo $direccion->direccion; ?>
-              <?php endforeach; ?>
+              <?php echo $direccion ?>
             </div>
           </div>
-          <hr style='border: 1px dashed #000;'>
+          <hr style='border: 1px solid #000;'>
           <div style='display: flex;
                       padding:6px;
                       justify-content:space-around'>
@@ -142,7 +115,7 @@ ob_start();
             <div class='inline' style='width:100px;text-align:center'>Total</d>
             </div>
           </div>
-          <hr style='border: 1px dashed #000;'>
+          <hr style='border: 1px solid #000;'>
           <!-- DIV CONTENIDO CANTIDAD DESCRIPCION PRECIO PLATO -->
           <div class='compra-content'>
             <table>
@@ -165,9 +138,9 @@ ob_start();
             </table>
           </div>
           <!-- FIN CONTENIDO CANTIDAD DESCRIPCION PRECIO PLATO -->
-          <hr style='border: 1px dashed #000;'>
+          <hr style='border: 1px solid #000;'>
           <div style='padding:6px; display:flex; justify-content:space-between;'>
-            <div style='width:80%'>TOTAL IGV</div>
+            <div style='width:80%'>COSTO DE TRANSPORTE</div>
             <div>
               <?php
               $subtotal = 0;
@@ -178,7 +151,7 @@ ob_start();
                 $subtotal = $subtotal + $costo;
                 $igv = $subtotal * 0.18;
               }
-              echo "S/" . $igv;
+              echo "S/" . "20";
               ?>
             </div>
           </div>
@@ -192,12 +165,9 @@ ob_start();
               foreach ($carrito as $item) {
                 $precio = $item['producto']->precioPlato;
                 $cantidad = $item['cantidad'];
-                $costo = $precio * $cantidad;
-                $subtotal = $subtotal + $costo;
-                $igv = $subtotal * 0.18;
-                $total = $subtotal + $igv;
+                $costo = ($precio * $cantidad) + 20;
               }
-              echo "S/" . $total;
+              echo "S/" . $costo;
               ?>
             </div>
           </div>
@@ -209,18 +179,6 @@ ob_start();
       </div>
     </div>
   </div>
-  <div style="width: 200px;
-    vertical-align: middle;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: 600;
-    ">
-    <a href=javascript:window.print()>
-      Imprimir comprobante
-    </a>
-  </div>
 </body>
 
 </html>
@@ -228,11 +186,6 @@ ob_start();
 $comprobante = ob_get_clean();
 ?>
 <?php
-if ($idComprobante == 1) {
-  echo $comprobante;
-  $boletaEnviada = MailTools::enviar($cliente->correo, 'Compra realizada con exito!', $comprobante);
-} elseif ($idComprobante == 2) {
-  echo $comprobante;
-  $boletaEnviada = MailTools::enviar($cliente->correo, 'Compra realizada con exito!', $comprobante);
-}
+echo $comprobante;
+$boletaEnviada = MailTools::enviar($cliente->correo, 'Compra realizada con exito!', $comprobante);
 ?>

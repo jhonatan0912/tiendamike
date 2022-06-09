@@ -16,8 +16,8 @@ class MailTools
     $mail->CharSet = "UTF-8";
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'i2125575@continental.edu.pe';
-    $mail->Password = 'elhvqyjivasecrwp';
+    $mail->Username = 'enguelhous55@gmail.com';
+    $mail->Password = 'nxdvizledjdfqzit';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 

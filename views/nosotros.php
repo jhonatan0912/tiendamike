@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros</title>
-    <link rel="shortcut icon" href="../assets/imagenes/logochifa.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imagenes/logoTienda.png" type="image/x-icon">
     <style type="text/css">
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            background: #FFFAF4;
+            background: #fff;
         }
 
         img {

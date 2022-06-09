@@ -23,19 +23,16 @@ if (isset($_SESSION['personal'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style-listar-platos-administrador.css">
-    <link rel="shortcut icon" href="/assets/imagenes/logochifa.png" type="image/x-icon">
-    <title>ADMINISTRAR PLATOS</title>
+    <link rel="shortcut icon" href="/assets/imagenes/logoTienda.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a413ea44fb.js" crossorigin="anonymous"></script>
+    <title>ADMINISTRAR PRODUCTOS</title>
 </head>
 
 <body>
+    <a style="color: #000;font-size:1.9em" href="/views/administrador/index.php"> <i class="fas fa-angle-double-left"></i></a>
     <div class="high-container">
-        <div class="img-back-arrow">
-            <a href="/views/administrador/index.php">
-                <img class="back-arrow-img" src="/assets/imagenes/back-arrow.png">
-            </a>
-        </div>
         <div class="title-page">
-            <h1>ADMINISTRAR PLATOS</h1>
+            <h1>ADMINISTRAR PRODUCTOS</h1>
         </div>
     </div>
     <div class="platos-container">
@@ -50,11 +47,12 @@ if (isset($_SESSION['personal'])) {
                     </p>
                 </div>
 
-                <div class="descripcion-plato">
+                <!-- <div class="descripcion-plato">
                     <span class="descripcion--plato">
-                        <?php echo ucwords($plato->descripcionPlato) ?>
+                        <?php //echo ucwords($plato->descripcionPlato) 
+                        ?>
                     </span>
-                </div>
+                </div> -->
 
                 <div class="precio--container">
                     <p class="precio--mount">

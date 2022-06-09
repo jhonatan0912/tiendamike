@@ -32,53 +32,55 @@ if (isset($_POST['correo']) && isset($_POST['password'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>LOGIN</title>
 	<link rel="stylesheet" type="text/css" href="/assets/css/style--login--clientes.css">
-	<link rel="icon" href="/assets/imagenes/logochifa.png">
+	<link rel="icon" href="/assets/imagenes/logoTienda.png">
 </head>
 
 <body>
 	<div class="boxform">
 		<div class="logo">
-			<img src="/assets/imagenes/logochifa.png" width="162px" height="162px">
+			<a href="<?= $_SERVER["HTTP_REFERER"] ?>">
+				<img src="/assets/imagenes/logoTienda.png" width="162px" height="162px">
+			</a>
 		</div>
 	</div>
 	<div class="container">
 		<form class="box" action="" method="POST">
-			<h1 style="color:#fff;text-shadow:2px 2px #000;">Login</h1>
+			<h1 style="color:#000">Iniciar Sesión</h1>
+			<div class="registrarse">
+				<a style="color:#000; text-decoration:none;font-weight:700;" href="/views/seguridad/p-registro-clientes.php">
+					Registrarse
+				</a>
+			</div>
+			<label for="">Direccion de correo electrónico</label>
+			<input type="email" name="correo" placeholder="Correo electronico">
+			<label for="">Contraseña</label>
+			<input type="password" name="password" placeholder="Contraseña">
 
-			<input type="email" name="correo" placeholder="Email">
-
-			<input type="password" name="password" placeholder="Password">
-
-			<input type="submit" name="login" value="Login">
+			<input type="submit" name="login" value="Iniciar">
 			<div class="error-logueo">
 				<?php if ($falloLogueo) : ?>
-					<p style="color:#fff;margin:8px 0;">
+					<p style="color:#000;margin:8px 0;">
 						Correo o contraseña invalidos
 						<br>
 						intentelo nuevamente
 					</p>
-					<p>
+					<!-- <p>
 						<a class="btn-recoveryPassword" href="/views/seguridad/recuperarContrasena.php">
 							Recuperar Contraseña
 						</a>
-					</p>
+					</p> -->
 				<?php endif; ?>
-			</div>
-			<div class="registrarse">
-				<a style="color:#fff; text-decoration:none;font-weight:700;" href="/views/seguridad/p-registro-clientes.php">
-					Registrarse
-				</a>
 			</div>
 		</form>
 
 		<div class="buttons-login">
-			<button id="facebookButton" class="buttons__facebook">
+			<!-- <button id="facebookButton" class="buttons__facebook">
 				<img class="buttons__image" src="/assets/imagenes/login-facebook.png">
-			</button>
+			</button> -->
 
-			<button id="googleButton" class="buttons__google">
+			<!-- <button id="googleButton" class="buttons__google">
 				<img class="buttons__image" src="/assets/imagenes/login-google.png">
-			</button>
+			</button> -->
 		</div>
 	</div>
 

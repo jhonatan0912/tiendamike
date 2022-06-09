@@ -11,7 +11,7 @@ class VentaDetalleAdapter
     $db = new ConeccionProyectoModular();
     $sql = "SELECT
      *
-     FROM proyecto_modular.ventadetalle
+     FROM tiendamike.ventadetalle
      WHERE idVenta=$idVenta;";
     $tabla = $db->consulta($sql);
     // echo $sql;
@@ -24,7 +24,7 @@ class VentaDetalleAdapter
   static function crear($ventaDetalle)
   {
     $db = new ConeccionProyectoModular();
-    $sql = "INSERT INTO `proyecto_modular`.`ventadetalle`
+    $sql = "INSERT INTO `tiendamike`.`ventadetalle`
           (
           `idVenta`,
           `idPlato`,

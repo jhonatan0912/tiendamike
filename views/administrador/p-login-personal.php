@@ -28,13 +28,13 @@ if (isset($_POST['dni']) && isset($_POST['password'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>LOGIN</title>
 	<link rel="stylesheet" href="../../assets/css/style--login--personal.css?=ver1">
-	<link rel="shortcut icon" href="/assets/imagenes/logochifa.png" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/imagenes/logoTienda.png" type="image/x-icon">
 </head>
 
 <body>
 	<div class="logo">
 		<a href="/">
-			<img src="../../assets/imagenes/logochifa.png" width="162px" height="162px">
+			<img src="../../assets/imagenes/logoTienda.png" width="162px" height="162px">
 		</a>
 
 	</div>
@@ -43,7 +43,7 @@ if (isset($_POST['dni']) && isset($_POST['password'])) {
 
 		<h1>Login</h1>
 
-		<input type="number" name="dni" placeholder="DNI" required>
+		<input type="text" name="dni" placeholder="Nombre" required>
 
 		<input type="password" name="password" placeholder="Password" required>
 

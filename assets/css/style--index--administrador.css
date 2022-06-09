@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 *{
 	margin: 0;
 	padding: 0;
@@ -7,7 +6,7 @@
 
 body{
 	background-color: #FFFAF4;
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Nunito',sans-serif;
 }
 
 .container-logo-title{
@@ -29,14 +28,17 @@ body{
 }
 
 .options-administrator{
-	background-color: #C92D39;
-	border: 1px solid #000;
+	background-color: #000000;
+	border: 1px solid rgb(255, 255, 255);
 	box-shadow:2px 2px 10px #000 ;
-	border-radius: 15px;
+	/* border-radius: 15px; */
 	width: 250px;
-	height: 300px;
+	/* height: 300px; */
 	text-align: center;
 	padding: 10px 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .statistics{
@@ -49,17 +51,19 @@ body{
 }
 
 .statistics__card{
-box-shadow: 0 0 10px;
+	box-shadow: 0 0 3px;
 	/* background-color: green; */
 	background-color: #fff;
 	margin: 1em 2.5em;
-	border-radius: .7em;
+	border-radius: .3em;
 	min-width: 190px;
-	max-height: 100px;
+	max-height: 190px;
 	padding: .5em 1.5em;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	font-weight: bolder;
 }
 
 .image__card{
@@ -100,11 +104,6 @@ box-shadow: 0 0 10px;
 		border: 1px solid #000;
 }
 
-.salir:hover{
-	background-color: #f7b43f;
-	color: #fff;
-}
-
 .redireccion-salir:hover{
 		color: rgb(36, 36, 36);
 }
@@ -123,7 +122,6 @@ box-shadow: 0 0 10px;
 }
 
 .container-title{
-	background-color: #000;
 	height: 80px;
 	width: 460px;
 	text-align: center;
@@ -134,18 +132,16 @@ box-shadow: 0 0 10px;
 
 .container-page-mid{
 	height: calc(100vh - 220px);
-	margin: 10px 30px;
 	display: flex;
-	/* background-color: #C27B00; */
 }
 
 .form-register-plato{
-	background-color: #CB0620;
+	/* background-color: #000000; */
 	width: 460px;
-	border-radius: 20px;
 	text-align: center;
 	margin: 20px 28% 6%;
-	box-shadow: 2px 2px 10px #000;
+	box-shadow: 2px 2px 10px rgb(255, 255, 255);
+	border: 1px solid;
 }
 
 .upload-image-container{
@@ -162,7 +158,7 @@ box-shadow: 0 0 10px;
 	background-image: url(/assets/imagenes/subir.png);
 	background-size: contain;
 	background-repeat: no-repeat;
-	color: rgba(0, 0, 0, 0)
+	color: rgba(0, 0, 0, 0);
 }
 
 ::file-selector-button {
@@ -237,14 +233,13 @@ a{
 }
 
 .borderMustard{
-	border: 1px solid #C27B00;
+	border: 1px solid #ffffff;
 }
 
 .sizeInput{
 	width: 250px;
 	height: 45px;
-	border-radius: 10px;
-	background-color: #CB0620;
+	background-color: #000000;
 	color: #fff;
 	font-size: 20px;
 	text-align: center;
@@ -272,7 +267,7 @@ button:hover{
 }
 
 .formulario{
-	background-color:#C92D39;
+	background-color:#000000;
 	position: fixed;
 	top: 21%;
 	left: 40%;
@@ -306,8 +301,8 @@ button:hover{
 	/* color: rgb(119, 119, 119); */
 }
 
-.btn-close-modal:hover{
-	color: #6e6e6e;
+.btn-close-modal{
+	color: #ffffff;
 }
 
 .inputs-form{
@@ -340,7 +335,7 @@ input::-webkit-inner-spin-button {
 .formularioHistorySales{
 	background-color:#C92D39;
 	position: fixed;
-	top: 21%;
+	top: 35%;
 	left: 40%;
 	border-radius: .5em;
 	box-shadow: 0 0 10px #6e6e6e;
@@ -352,6 +347,7 @@ input::-webkit-inner-spin-button {
 	justify-content: space-between;
 	align-items: center;
 	padding: .4em 1em;
+	background-color: #000;
 }
 
 .header-form-history > p{
@@ -360,7 +356,7 @@ input::-webkit-inner-spin-button {
 }
 
 .formularioHistorySales > form {
-	/* background-color: blue; */
+	background-color: rgb(0, 0, 0);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -382,26 +378,11 @@ input[type="date"]{
 	margin: 1em 0;
 	text-align: center;
 }
-
-/*? FIN MODAL FILTRADO POR FECHA  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* input::-webkit-outer-spin-button
-input::-webkit-inner-spin-button{ */
+a{
+	font-weight: bolder;
+}
+.options-administrator{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-*{
-    
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+*{  
     margin: 0;
     padding: 0;
 }
 body{
-    background: #FFFAF4;
+    background: #fff;
     width: 100vw;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Nunito',sans-serif;
 }
 .container{
     /* background-color: green; */
@@ -17,17 +16,28 @@ body{
     flex-direction: column;
 }
 
-.logoImg{
-    width: 162px;
-    padding:15px 0 0 15px;
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 2.9em;
+    padding: 0 0 0 20px;
+}
+.hyperlink__logo{
+    text-decoration: none;
+    color: #000;
 }
 .nav--high{
     display: flex;
     width: 100vw;
     max-width: 100%; 
+    box-shadow: 0 0 4px;
+    background-color: #dadada;
 }
 .container-title-page{
-    width: calc(100vw - 192px);
+    width: calc(100vw - 800px);
     display: flex;
   
 }
@@ -37,8 +47,6 @@ body{
     height:2em ;
     border-radius: .2em;
     text-align: center;
-    background-color: black;
-    color: #FFFAF4;
     margin: auto;
 }
 .datos-cliente{
@@ -55,14 +63,14 @@ body{
     font-weight:700;
 }
 .salir{
-    background-color: #C92D39;
+    background-color: #000000;
      border-radius: .3em;
      display: flex;
      justify-content: center;
      align-items: center;
 }
 .redireccion-salir{
-    color: #FFFAF4;
+    color: #fff;
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -106,22 +114,22 @@ body{
     margin: 2em auto;
 }
 .orders-container{
-    /* background-color:skyblue; */
-     box-shadow: 0 0 5px #6e6e6e;
     width: 65%;
-    border-radius: .8em;
+    border-radius: 0.8em;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
 table{
     width: 100%;
 }
 tr{
     display: flex;
-    box-shadow: 0 0 5px #c7b7b7;
-    border-radius: .3em;
-    margin: 1em .5em;
+    border-radius: 0.3em;
+    margin: 1em 0.5em;
     justify-content: space-around;
     align-items: center;
-    padding: .6em;
+    padding: 0.6em;
+    border-bottom: 1px solid;
 }
 .imagen-producto{
     border-radius: .2em;
@@ -129,17 +137,18 @@ tr{
     object-fit: contain;
 }
 .resumen-pedido-container{
-    box-shadow: 0 0 5px #918b8b;
     width: 30%;
-    border-radius: .8em;
+    border-radius: 0.8em;
     text-align: center;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
 }
 .container-direcciones{
     padding: .1em;
 }
 .container-direcciones > div {
     /* background-color: blue; */
-    margin: 0 0 .2em 0
+    /* margin: 0 0 .2em 0 */
 }
 .subtotal-list-direcciones{
     /* border: 1px solid rgb(112, 112, 112); */
@@ -164,10 +173,10 @@ tr{
     text-align: justify;
 }
 .btn-continuar{
-    background-color: #c92d39;
+    background-color: #000000;
     border-radius: .5em;
     padding: .5em;
-    color: #FFFAF4;
+    color: #fff;
     border: none;
     padding: .5em .7em;
     font-size: 1.1em;
@@ -178,7 +187,7 @@ tr{
 }
 /* btn agregar direccion */
 .agregar-direccion{
-    background-color: rgb(0, 98, 128);
+    background-color: rgb(0, 0, 0);
     border: none;
     border-radius: .5em;
     color: #fff;
@@ -353,11 +362,95 @@ input[type="radio"]{
     font-size: 1em;
 }
 
+.fa-times-circle{
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #000;
+}
+.select-pago{
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+.pasarela-pago{
+    width: 90%;
+    height: 300px;
+    margin: 5px auto;
+    border: 1px solid ;
+}
+.pasarela-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+}
+.pasarela-mid{
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+}
+.pasarela-mid > div{
+margin: 20px 0;
+border-radius: 5px;
+}
+.numero-tarjeta{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+}
+.nombre-titular{
+    display: flex;
+        border: 1px solid;
+        height: 35.19px;
+}
+.fechaVencimiento-codigoSeguridad{
+    display: flex;
+    justify-content: space-between;
+}
+.pasarela-footer{
+    display: flex;
+    border-top: 1px solid;
+    justify-content: space-between;
+    display: none;
+}
+.fecha-vencimiento{
+    display: flex;
+        border: 1px solid;
+}
+.codigo-seguridad{
+    display: flex;
+        border: 1px solid;
+        width: 38%;
+}
 
-
-
-
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+::placeholder{
+    font-size: 1em;
+    text-align: left;
+}
+.tarjeta-credito-p{
+font-weight: bolder;
+    font-size: 1.1em;
+}
+input[type="number"]::placeholder{
+    font-size: .7em;
+}
+input{
+border: 1px solid;
+outline: none;
+}
+.nombre-titular-input{
+    width: 100%;
+    border: none;
+}
+.candado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* 1024px */
 @media only screen and (max-width: 	64em){
     tr{

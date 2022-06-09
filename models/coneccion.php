@@ -9,7 +9,7 @@ class ConeccionProyectoModular
             '127.0.0.1', //localhost
             'root', //user
             '1234', //password 
-            'proyecto_modular', //name DB
+            'tiendamike', //name DB
             3306 //port
         );
     }

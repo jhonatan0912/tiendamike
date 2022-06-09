@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -7,8 +7,8 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #FFFAF4;
-    font-family: 'Varela Round', sans-serif;
+    background-color: #fff;
+   	font-family: 'Nunito',sans-serif;
     
 }
 .title-page{
@@ -18,7 +18,7 @@ body{
 }
 .high-container{
 	display: flex;
-	/* background-color: green; */
+    justify-content: center;
 	width: 100%;
 }
 .back-arrow-img{
@@ -32,13 +32,13 @@ flex-basis: calc(100% - 170px);
 .platos--content{
     max-width: 300px;
     /* display: inline-block; */
-    height: 450px;
+    height: 400px;
     background-color: #fff;
     margin: 5px 5px;
-    border-radius: 10px;
+    border-radius: 3px;
     text-align: center;
     min-width: 300px;
-    box-shadow: 1px 1px 10px;
+    border: 1px solid;
 }
 .platos--content.oculto{
     display: none;
@@ -66,14 +66,14 @@ a{
     min-height: 120px;
 }
 .editar{
-    background-color: #230086;
+    background-color: #ff0000;
     padding: 5px ;
     border-radius: 10px;
     width: 60%;
-    margin: 10 auto;
+    margin: 40px auto;
 }
 .eliminar{
-    background-color: #bf3737;
+    background-color: #000000;
     padding: 5px;
     border-radius: 10px;
     width: 60%;

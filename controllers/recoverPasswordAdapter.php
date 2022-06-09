@@ -6,7 +6,7 @@ class RecoverPasswordAdapter
   static function insertar($recoverPassword)
   {
     $db = new ConeccionProyectoModular();
-    $sql = "INSERT INTO `proyecto_modular`.`recoverpassword`
+    $sql = "INSERT INTO `tiendamike`.`recoverpassword`
           (`idCliente`,
           `recoveryToken`,
           `fueUsado`,
@@ -27,8 +27,8 @@ class RecoverPasswordAdapter
   {
     $db = new ConeccionProyectoModular();
     $sql = "SELECT cli.correo
-      FROM proyecto_modular.recoverpassword as re
-      INNER JOIN proyecto_modular.clientes as cli
+      FROM tiendamike.recoverpassword as re
+      INNER JOIN tiendamike.clientes as cli
       on re.idCliente = cli.idCliente
       WHERE 
       re.recoveryToken = '$token'
@@ -47,7 +47,7 @@ class RecoverPasswordAdapter
 
   static function usarToken($token)
   {
-    $sql = "UPDATE proyecto_modular.recoverpassword
+    $sql = "UPDATE tiendamike.recoverpassword
     SET fueUsado = 1
     WHERE recoveryToken = '$token'
     ";

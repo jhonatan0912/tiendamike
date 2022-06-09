@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 *{
 	margin: 0;
 	padding: 0;
 }
 body{
-	background-color: #FFFAF4;
-	font-family: 'Varela Round', sans-serif;
+	background-color: #fff;
+	font-family: 'Nunito',sans-serif;
 }
 .high-container{
 	display: flex;
-	/* background-color: green; */
 	width: 100%;
+	justify-content: center;
+	align-items: center;
 }
 .back-arrow-img{
 	width: 60px;
@@ -28,27 +29,26 @@ font-weight: 700;
 margin: 10px 0;
 }
 .form-register-plato{
-  background-color: #CB0620;
 	width: 460px;
-	border-radius: 20px;
 	text-align: center;
 	margin: auto;
-	box-shadow: 2px 2px 10px #000;
+	border: 1px solid;
+	background-color: #000;
 }
 .marginOptions{
 	margin: 15px 0;
 }
 .borderMustard{
-	border: 1px solid #C27B00;
+	border: 1px solid #ffffff;
 }
 .sizeInput{
 	width: 250px;
 	height: 45px;
 	border-radius: 10px;
-	background-color: #CB0620;
+	background-color: #000000;
 	color: #fff;
 	font-size: 20px;
-	text-align: center;
+	text-align: center;	
 }
 input[type="submit"]{
 	width: 150px;
@@ -92,22 +92,20 @@ select::-webkit-scrollbar-thumb:hover{
   display: none;
 }
 input[type="file"]{
-	background-image: url(/assets/imagenes/upload-plato.png);
-	width: 100%;
-	height:100px;
-	background-repeat: no-repeat;
-	background-position: center;
-	color: transparent;
-	background-size: contain;
+background-image: url('/assets/imagenes/upload.png');
+/* background-size: cover; */
+background-repeat: no-repeat;
+background-position: center;
+height: 40px;
 }
 .text-upload-image{
 	color: #fff;
 }
 .update-image-plato{
-	background-color: #8f2618b0;
-	margin: 0 40px;
-	padding: 15px;
-	border-radius: 15px;
-	border: 1px solid #861708b0;
+	/* background-color: #8f2618b0; */
+    margin: 30px 100px;
+    border-radius: 15px;
+    border: 1px solid #fff;
+    height: 40px;
 }
 

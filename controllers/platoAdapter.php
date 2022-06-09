@@ -7,7 +7,7 @@
         static function listar()
         {
             $db = new ConeccionProyectoModular();
-            $sql = "SELECT * FROM proyecto_modular.platos;";
+            $sql = "SELECT * FROM tiendamike.platos;";
             $tabla = $db->consulta($sql);
             $db->cerrar();
             $platos = [];
@@ -29,7 +29,7 @@
             nombrePlato,
             descripcionPlato,
             precioPlato
-            FROM proyecto_modular.platos 
+            FROM tiendamike.platos 
             WHERE idVariedad=$idVariedad;";
             $tabla = $db->consulta($sql);
             $db->cerrar();
@@ -45,7 +45,7 @@
         static function obtenerUno($idPlato)
         {
             $db = new ConeccionProyectoModular();
-            $sql = "SELECT * FROM proyecto_modular.platos
+            $sql = "SELECT * FROM tiendamike.platos
                      WHERE idPlato=$idPlato";
             $tabla = $db->consulta($sql);
             if (count($tabla) > 0) {
@@ -60,7 +60,7 @@
         static function crearPlato($plato)
         {
             $db = new ConeccionProyectoModular();
-            $sql = "INSERT INTO `proyecto_modular`.`platos`
+            $sql = "INSERT INTO `tiendamike`.`platos`
                 (`idVariedad`,
                 `imagenPlato`,
                 `nombrePlato`,
@@ -73,7 +73,6 @@
                 '$plato->descripcionPlato',
                 '$plato->precioPlato');
                 ";
-            // echo  $sql . "<br>";
             $id = $db->insert($sql);
             // echo $id;
             $db->cerrar();
@@ -85,15 +84,15 @@
         static function actualizarPlato($plato)
         {
             $db = new ConeccionProyectoModular();
-            $sql = "UPDATE `proyecto_modular`.`platos`
+            $sql = "UPDATE `tiendamike`.`platos`
                     SET
                     `idVariedad` = $plato->idVariedad,
                     `imagenPlato`='$plato->imagenPlato',
                     `nombrePlato` = '$plato->nombrePlato',
-                    `descripcionPlato`='$plato->descripcionPlato',
                     `precioPlato`='$plato->precioPlato'
                     WHERE `idPlato` = $plato->idPlato;
                     ";
+            // echo $sql;
             $esCorrecto = $db->actualizar($sql);
             $db->cerrar();
             return $esCorrecto;
@@ -104,7 +103,7 @@
         static function eliminar($idPlato)
         {
             $db = new ConeccionProyectoModular();
-            $sql = "DELETE  FROM `proyecto_modular`.`platos`
+            $sql = "DELETE  FROM `tiendamike`.`platos`
                     WHERE idPlato=$idPlato;";
             $respuesta = $db->eliminar($sql);
             return $respuesta;
@@ -115,7 +114,7 @@
         static function getNumberOfProducts()
         {
             $db = new ConeccionProyectoModular();
-            $sql = "SELECT * FROM proyecto_modular.platos;";
+            $sql = "SELECT * FROM tiendamike.platos;";
             $numberProducts = $db->getNumberData($sql);
             return $numberProducts;
         }

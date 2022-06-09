@@ -7,7 +7,7 @@ class VentaAdapter
   static function crear($venta)
   {
     $db = new ConeccionProyectoModular();
-    $sql = "INSERT INTO `proyecto_modular`.`venta`
+    $sql = "INSERT INTO `tiendamike`.`venta`
             (`idCliente`,
             `celular`,
             `indicaciones`,
@@ -20,7 +20,7 @@ class VentaAdapter
             $venta->idCliente,
             '$venta->celular',
             '$venta->indicaciones',
-            $venta->idDireccion,
+            '$venta->idDireccion',
             '$venta->fechaHora',
             $venta->idComprobante,
             '$venta->numeroDocumento'
@@ -36,7 +36,7 @@ class VentaAdapter
   static function getNumberOfSales()
   {
     $db = new ConeccionProyectoModular();
-    $sql = "SELECT * FROM proyecto_modular.venta;";
+    $sql = "SELECT * FROM tiendamike.venta;";
     $numberSales = $db->getNumberData($sql);
     return $numberSales;
   }
@@ -44,17 +44,17 @@ class VentaAdapter
   static function yAxis($dateFechaHora)
   {
     $db = new ConeccionProyectoModular();
-    $sql = "SELECT * from proyecto_modular.venta WHERE fechaHora like '%$dateFechaHora';";
+    $sql = "SELECT * from tiendamike.venta WHERE fechaHora like '%$dateFechaHora';";
     $yAxis = $db->getNumberData($sql);
     return $yAxis;
   }
   static function salesChart($date)
   {
     $db = new ConeccionProyectoModular();
-    // $sql = "SELECT * FROM proyecto_modular.venta
+    // $sql = "SELECT * FROM tiendamike.venta
     // WHERE fechaHora LIKE '%$date%';
     // ";
-    $sql = "SELECT * from proyecto_modular.venta WHERE fechaHora >= '$date' GROUP BY fechaHora LIMIT 7;";
+    $sql = "SELECT * from tiendamike.venta WHERE fechaHora >= '$date' GROUP BY fechaHora LIMIT 7;";
     echo $sql;
     $tabla = $db->consulta($sql);
     $db->cerrar();

@@ -27,7 +27,7 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/assets/css/style--index--administrador.css">
-  <link rel="shortcut icon" href="/assets/imagenes/logochifa.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/assets/imagenes/logoTienda.png" type="image/x-icon">
   <title>PANEL ADMINISTRADOR</title>
 </head>
 
@@ -35,55 +35,63 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
   <div class="container-logo-title">
     <div class="container-logo">
       <a href="/">
-        <img class="img-logo" src="/assets/imagenes/logochifa.png">
+        <img class="img-logo" src="/assets/imagenes/logoTienda.png">
       </a>
     </div>
     <div class="title-container">
-      Panel Administrador
+      Calzados Mike
     </div>
   </div>
 
   <div class="container-page-mid">
     <!-- CONTAINER PANEL ADMINISTRADOR -->
     <div class="options-administrator">
-      <div class="container-dni-administrator fontColorWhite fontSize">
-        <?php if ($logeado) : ?>
-          DNI: <?php echo $perfilPersonal->dni; ?>
-          <div class="salir">
-            <a class="redireccion-salir" href="/views/seguridad/cerrarSesion.php">
-              <img class="salirsvg" src="/assets/imagenes/salir.svg">
-              &nbsp CERRAR SESIÓN
-            </a>
-          </div>
-        <?php else : ?>
-          <div class="error-login">
-            error
-          </div>
-        <?php endif; ?>
-      </div>
+      <div>
+        <div class="option-three marginOptions">
+          <a href="/views/administrador/p-listar-platos.php" class="fontColorWhite shadowText fontSize">
+            GESTIÓN DE ZAPATILLAS
+          </a>
+        </div>
 
-      <div class="option-three marginOptions">
-        <a href="/views/administrador/p-listar-platos.php" class="fontColorWhite shadowText fontSize">
-          ADMINISTRAR PLATOS
-        </a>
-      </div>
+        <div class="option-two marginOptions">
+          <a href="/views/administrador/historialDeVentas.php" class="fontColorWhite shadowText fontSize formRegistroPersonal oculto">
+            GESTIÓN DE VENTAS
+          </a>
+        </div>
 
-      <div class="option-two marginOptions">
-        <button onclick="mostrarFormularioHistorialDeVentas(event)" class="fontColorWhite shadowText fontSize formRegistroPersonal oculto">
-          HISTORIAL DE VENTAS
-        </button>
-      </div>
+        <div class=" option-one marginOptions">
+          <a href="/views/administrador/p-registro-platos.php" class="fontColorWhite shadowText fontSize">
+            REGISTRO DE ZAPATILLAS
+          </a>
+        </div>
 
-      <div class=" option-one marginOptions">
-        <a href="/views/administrador/p-registro-platos.php" class="fontColorWhite shadowText fontSize">
-          REGISTRO DE PLATOS
-        </a>
-      </div>
+        <div class="option-four marginOptions">
+          <button onclick="mostrarFormularioRegistroPersonal(event)" class="fontColorWhite shadowText fontSize formRegistroPersonal oculto">
+            GESTIÓN DE TRABAJADORES
+          </button>
+        </div>
 
-      <div class="option-four marginOptions">
-        <button onclick="mostrarFormularioRegistroPersonal(event)" class="fontColorWhite shadowText fontSize formRegistroPersonal oculto">
-          REGISTRO DE PERSONAL
-        </button>
+        <div class=" option-one marginOptions">
+          <a href="/views/administrador/imagenesIndex.php" class="fontColorWhite shadowText fontSize">
+            PRODUCTOS NUEVOS PAGINA PRINCIPAl
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="container-dni-administrator fontColorWhite fontSize">
+          <?php if ($logeado) : ?>
+            <div class="salir">
+              <a class="redireccion-salir" href="/views/seguridad/cerrarSesion.php">
+                <img class="salirsvg" src="/assets/imagenes/salir.svg">
+                &nbsp CERRAR SESIÓN
+              </a>
+            </div>
+          <?php else : ?>
+            <div class="error-login">
+              error
+            </div>
+          <?php endif; ?>
+        </div>
       </div>
     </div>
     <!-- FIN CONTAINER PANEL ADMINISTRADOR -->
@@ -91,7 +99,7 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
 
       <div class="statistics__card">
         <div class="image__card">
-          <img class="statistics__img" src="/assets/imagenes/user.svg">
+          <img class="statistics__img" src="/assets/imagenes/user.png">
         </div>
         <div class="number-data">
           <strong>
@@ -102,7 +110,7 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
 
       <div class="statistics__card">
         <div class="image__card">
-          <img class="statistics__img" src="/assets/imagenes/staff.png">
+          <img class="statistics__img" src="/assets/imagenes/admin.png">
         </div>
         <div class="number-data">
           <strong>
@@ -113,12 +121,12 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
 
       <div class="statistics__card">
         <div class="image__card">
-          <img class="statistics__img" src="/assets/imagenes/product.png">
+          <img class="statistics__img" src="/assets/imagenes/zapatilla-icon.png">
         </div>
         <div class="number-data">
           <strong>
             <?php echo $numberProducts ?>
-          </strong> Platos <br> registrados
+          </strong> Zapatillas <br> registradas
         </div>
       </div>
 
@@ -145,7 +153,7 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
       </div>
       <form action="historialDeVentas.php" method="POST">
         <input type="date" name="date">
-        <input type="submit">
+        <input style="background-color: #C92D39;border:1px solid #fff" type="submit">
       </form>
     </section>
     <!-- END FORM HISTORIAL DE VENTAS -->
@@ -161,8 +169,8 @@ $numberOfStaff = PersonalAdapter::getNumberOfStaff();
       </div>
       <form class="form-add-direction" name="form1" action="p-registro-personal.php" method="POST">
         <div class="inputs-form">
-          <label for="dni">DNI</label>
-          <input type="number" name="dni" required min="1">
+          <label for="dni">NOMBRES</label>
+          <input type="text" name="dni" required>
         </div>
         <div class="inputs-form">
           <label for="password">PASSWORD</label>

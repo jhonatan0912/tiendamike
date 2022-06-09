@@ -14,7 +14,7 @@ $perfil = ClienteAdapter::perfilCliente($idCliente);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style-perfil-cliente.css">
-    <link rel="shortcut icon" href="/assets/imagenes/logochifa.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/imagenes/logoTienda.png" type="image/x-icon">
     <title>PERFIL DE CLIENTE</title>
 </head>
 
@@ -22,7 +22,7 @@ $perfil = ClienteAdapter::perfilCliente($idCliente);
     <div class="container-high">
         <div class="logo-container">
             <a href="<?= $_SERVER["HTTP_REFERER"] ?>">
-                <img class="logo" src="/assets/imagenes/logochifa.png">
+                <img class="logo" src="/assets/imagenes/logoTienda.png">
             </a>
         </div>
         <div class="container-titulo">

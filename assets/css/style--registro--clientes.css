@@ -1,45 +1,52 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body{
 	/* background: #F2DBAF; */
-	background: #FFFAF4;
-	color: #FFFFFF;
-	font-family: 'Varela Round', sans-serif;
+	background: #fff;
+	color: #000000;
+	font-family: 'Nunito',sans-serif;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
 }
 
 table{
-	background: #CB0620;
-	border-radius: 20px;
 	width: 400px;
-	box-shadow: 1em 1em 1em #DD5F5F;
 	padding: 5px;
 	height: 200px;
+	border: 1px solid;
+	margin: 15% 0;
 }
 
 
 h1{
-	background: #060606;
-	color:#FFFFFF;
+	color:#000000;
 	width:300px;
-	border-radius: 10px;
 	margin:20px;
 	padding:10px;
-	font-style:italic;
 }
 
 td{
-	background: #CB0620;
+	/* background: #CB0620; */
 	height: 30px;
 	width: 300px;
 	text-align: center;
 	border-radius: 20px;
 	padding-top: 4px;
+	font-weight: 800;
 }
 
 form input[type="text"],form input[type="email"],form input[type="tel"]{
 	background:#FFFFFF;
-	border-radius: 10px;
+	/* border-radius: 10px; */
 	height: 30px;
 	width: 200px;
+	border: 1px solid #000;
+	outline: none;
 }
 
 form input[type="submit"]{
@@ -53,9 +60,11 @@ form input[type="submit"]{
 
 form input[type="password"]{
 	background: #FFFFFF;
-	border-radius: 10px;
+	/* border-radius: 10px; */
 	height: 30px;
 	width:200px ;
+	border: 1px solid #000;
+	outline: none;
 }
 
 .login{
@@ -64,7 +73,16 @@ form input[type="password"]{
 }
 .container--mid{
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 
-
+.already-registered{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-weight: 600;
+}
+a{
+	text-decoration: none;
+	color:#000;
+}
